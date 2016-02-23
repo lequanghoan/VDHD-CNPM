@@ -1,0 +1,10 @@
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement.Business\bin\Debug\ProjectManagement.Business.dll.config
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement.Business\bin\Debug\ProjectManagement.Business.dll
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement.Business\bin\Debug\ProjectManagement.Business.pdb
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement.Business\bin\Debug\EntityFramework.dll
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement.Business\bin\Debug\EntityFramework.xml
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement.Business\obj\Debug\ProjectManagement.Business.csprojResolveAssemblyReference.cache
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement.Business\obj\Debug\ProjectManagement.Business.dll
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement.Business\obj\Debug\ProjectManagement.Business.pdb

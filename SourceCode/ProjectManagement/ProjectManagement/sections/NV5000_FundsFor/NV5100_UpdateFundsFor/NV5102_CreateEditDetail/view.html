@@ -1,0 +1,109 @@
+﻿
+<div class="modal-header">
+    <h3 class="modal-title text-orange text-uppercase">Cập nhật chi tiết kỳ cấp kinh phí</h3>
+</div>
+<div class="modal-body">
+    <div class="row margin-bottom-15 bg-white">
+        <label class="form-label col-md-6 margin-top-5" for="field-6">Hình thức thanh toán</label>
+        <div class="col-md-3">
+            <div class="radio">
+                <label class="icheck">
+                    <input type="radio" ng-click="vmPopup.radioCheck = 1" ng-model="vmPopup.radioCheck" value="1">
+                    <i></i> Trực tiếp
+                </label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="radio">
+                <label class="icheck">
+                    <input type="radio" ng-click="vmPopup.radioCheck = 2" ng-model="vmPopup.radioCheck" value="2">
+                    <i></i> Tạm ứng
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-white">
+        <div class="col-lg-12 col-md-12 col-sm-12" ng-show="vmPopup.radioCheck == 1">
+            <form name="formUpdate1">
+                <div class="form-group">
+                    <label class="form-label" for="field-1">Số tiền thanh toán</label>
+                    <span class="desc"></span>
+                    <div class="controls">
+                        <currency-full model-money="vmPopup.UpdateEntity.Amount"></currency-full>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="field-1">Ngày thanh toán</label>
+                    <span class="desc"></span>
+                    <div class="controls">
+                        <!--<input type="text" name="masked" ui-mask="99/99/9999" placeholder="MM/DD/YYYY" class="form-control" ng-model="vmPopup.UpdateEntity.AmountDate" required>-->
+                        <!--<div class="input-group" inputgroup>
+                            <input type="date" class="form-control datepicker" uib-datepicker-popup ng-model="vmPopup.UpdateEntity.AmountDate" is-open="vmPopup.DatePicker.open2" datepicker-options="vmPopup.dateOptions" close-text="Đóng" />
+                            <span class="input-group-addon" ng-click="vmPopup.DatePicker.open($event,'open2')"><i class="fa fa-calendar" style="color: #999;"></i></span>
+                        </div>-->
+                        <datepicker-full model-date="vmPopup.UpdateEntity.AmountDate"></datepicker-full>
+
+                        <!--<input type="text" class="form-control" id="field-2" ng-model="vmPopup.UpdateEntity.AmountDate" placeholder="dd/MM/yyyy">-->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="field-1">Ghi chú</label>
+                    <span class="desc"></span>
+                    <div class="controls">
+                        <input type="text" class="form-control" id="field-3" ng-model="vmPopup.UpdateEntity.Note" placeholder="Ghi chú">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12" ng-show="vmPopup.radioCheck == 2">
+            <form name="formUpdate2">
+                <div class="form-group">
+                    <label class="form-label" for="field-1">Số tiền tạm ứng</label>
+                    <span class="desc"></span>
+                    <div class="controls">
+                        <currency-full model-money="vmPopup.UpdateEntity2.AdvanceAmount"></currency-full>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="field-1">Ngày tạm ứng</label>
+                    <span class="desc"></span>
+                    <div class="controls">
+                        <!--<div class="input-group" inputgroup>
+                            <input type="date" class="form-control datepicker" uib-datepicker-popup ng-model="vmPopup.UpdateEntity2.AdvanceDate" is-open="vmPopup.DatePicker.open2" datepicker-options="vmPopup.dateOptions" close-text="Đóng" />
+                            <span class="input-group-addon" ng-click="vmPopup.DatePicker.open($event,'open2')"><i class="fa fa-calendar" style="color: #999;"></i></span>
+                        </div>-->
+                        <!--<datepicker-full model-date="vmPopup.UpdateEntity2.AdvanceDate" search-mode="0" is-validate="0"></datepicker-full>-->
+                        <datepicker-full model-date="vmPopup.UpdateEntity2.AdvanceDate"></datepicker-full>
+
+                        <!--<input type="text" class="form-control" id="field-1" ng-model="vmPopup.UpdateEntity2.AdvanceDate" placeholder="dd/MM/yyyy">-->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="field-1">Số tiền thanh toán tạm ứng</label>
+                    <span class="desc"></span>
+                    <div class="controls">
+                        <currency-full model-money="vmPopup.UpdateEntity2.Payment"></currency-full>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="field-1">Ngày thanh toán tạm ứng</label>
+                    <span class="desc"></span>
+                    <div class="controls">
+                        <!--<div class="input-group" inputgroup>
+                            <input type="date" class="form-control datepicker" uib-datepicker-popup ng-model="vmPopup.UpdateEntity2.PaymentDate" is-open="vmPopup.DatePicker.open2" datepicker-options="vmPopup.dateOptions" close-text="Đóng" />
+                            <span class="input-group-addon" ng-click="vmPopup.DatePicker.open($event,'open2')"><i class="fa fa-calendar" style="color: #999;"></i></span>
+                        </div>-->
+                        <!--<datepicker-full model-date="vmPopup.UpdateEntity2.PaymentDate" search-mode="0" is-validate="0"></datepicker-full>-->
+                        <datepicker-full model-date="vmPopup.UpdateEntity2.PaymentDate"></datepicker-full>
+
+                        <!--<input type="text" class="form-control" id="field-2" ng-model="vmPopup.UpdateEntity2.PaymentDate" placeholder="dd/MM/yyyy">-->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="vmPopup.FnSave()">Ghi</button>
+    <button class="btn btn-default" ng-click="vmPopup.FnCancel()">Thoát</button>
+</div>

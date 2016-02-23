@@ -1,0 +1,158 @@
+
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Nhiệm vụ dự kiến';">
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Thông tin tìm kiếm</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                </div>
+            </header>
+            <div class="content-body padding-top-30 padding-bottom-30">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Tên Đề tài/Dự án</label>
+                                <span class="desc"></span>
+                                <div class="controls">
+                                    <input class="form-control" placeholder="Tên ĐT/DA" ng-model="vm.SearchEntity.ProjectName">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Loại</label>
+                                <span class="desc"></span>
+                                <div class="input-group" inputgroup>
+                                    <select class="form-control" name="category" data-ng-model="vm.SearchEntity.ProjectType">
+                                        <option value="0">&lt;Tất cả&gt;</option>
+                                        <option value="1">Đề tài</option>
+                                        <option value="2">Dự án</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="form-label">Tình trạng</label>
+                                    <span class="desc"></span>
+                                    <div class="input-group" inputgroup>
+                                        <select class="form-control" name="status" data-ng-model="vm.SearchEntity.Status">
+                                            <option value="0">&lt;Tất cả&gt;</option>
+                                            <option value="1" selected="selected">Chưa thực hiện</option>
+                                            <option value="2">Đã duyệt thuyết minh</option>
+                                            <option value="3">Đã duyệt kinh phí</option>
+                                            <option value="4">Đã nghiệm thu</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Phòng ban</label>
+                                <span class="desc"></span>
+                                <div class="input-group" inputgroup>
+                                    <select class="form-control" name="department" data-ng-model="vm.SearchEntity.DepartmentId"
+                                            data-ng-options="unit.DepartmentId as unit.DepartmentName for unit in vm.ListDepartment">
+                                        <option value="" selected="selected">&lt;Tất cả&gt;</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Năm</label>
+                                <span class="desc"></span>
+                                <div class="input-group" inputgroup>
+                                    <select class="form-control" name="year" data-ng-model="vm.SearchEntity.PlanYear"
+                                            data-ng-options="unit.id as unit.name for unit in vm.ListYear">
+                                        <!--<option value="" selected="selected">&lt;Tất cả&gt;</option>-->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+                        <button type="submit" class="btn btn-primary" ng-click="vm.FnSearch()">Tìm kiếm</button>
+                        <button type="button" class="btn btn-primary" ng-click="vm.FnClear()">Xóa điều kiện</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Danh sách nhiệm vụ</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                </div>
+            </header>
+            <div class="content-body padding-top-30 padding-bottom-30">
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button type="button" class="btn btn-primary margin-bottom-15" ng-click="vm.FnCreate()">Thêm mới</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="overflow: auto">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Loại</th>
+                                    <th>Năm</th>
+                                    <th>Tên nhiệm vụ</th>
+                                    <th>Đơn vị thực hiện</th>
+                                    <th>Phòng Quản lý</th>
+                                    <th>Kinh phí</th>
+                                    <th>Duyệt</th>
+                                    <th>Xử lý</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="row in vm.ListData">
+                                    <td>{{$index+1}}</td>
+                                    <td>{{row.ProjectTypeName}}</td>
+                                    <td>{{row.PlanYear}}</td>
+                                    <td><a href="javascript:;" ng-click="vm.FnShowEdit(row.ProjectId)">{{row.ProjectName}}</a></td>
+                                    <td>{{row.Agency}}</td>
+                                    <td>
+                                        <select class="form-control" name="department" data-ng-model="row.DepartmentId"
+                                                data-ng-options="unit.DepartmentId as unit.DepartmentName for unit in vm.ListDepartment"
+                                                ng-change="vm.FnChangeDept(row.ProjectId, row.DepartmentId)">
+                                            <option value="" selected="selected"></option>
+                                        </select>
+                                    </td>
+                                    <td style="text-align:right">{{row.FundsFor}}</td>
+                                    <td class="text-center">
+                                        <div class="checkbox">
+                                            <label class="icheck">
+                                                <input type="checkbox" style="position: absolute" ng-model="row.Status" ng-checked="row.Status != 1" ng-true-value="2"
+                                                       ng-false-value="1" ng-disabled="row.Status==3" ng-click="vm.FnApproveProject(row.ProjectId, row.Status)">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center">
+                                        <button type="button" class="btn btn-danger" ng-click="vm.FnDelete(row.ProjectId)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                                    </td>
+                                </tr>
+                                <tr ng-if="vm.ListData.length>0">
+                                    <td colspan="6" style="text-align:right">Tổng kinh phí:</td>
+                                    <td colspan="1" style="text-align:right">{{vm.GridVM.TotalMoney}}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

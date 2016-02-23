@@ -1,0 +1,247 @@
+﻿input[type=checkbox], input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=radio], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea, .form-control {
+    /*border: 2px solid #e1e1e1;*/
+    /*padding-left: 2px;*/
+}
+
+td .btn {
+    padding: 0 5px;
+}
+
+/*Css background của modal*/
+.modal-body {
+    background-color: #F5F5F5;
+}
+
+/*.modal-body>* {
+    background-color: #fff;
+}*/
+
+/*Css màu tiêu đề trong modal*/
+.text-orange {
+    color: #FF6E40;
+}
+
+/*css cho nút chức năng trên top của table*/
+.top-btn {
+    padding: 0 5px;
+}
+
+select, .form-control {
+    height: 35px !important;
+}
+
+.text-blue {
+    color: blue;
+}
+
+.text-red {
+    color: red;
+}
+
+a {
+    text-decoration: underline;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+/*start custom giao dien*/
+body {
+    text-shadow: none !important;
+}
+
+.page-topbar {
+    min-height: 80px;
+    background-color: #FAFAFA;
+    max-height: 80px;
+    border-bottom: 3px solid #05a038;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+    .page-topbar .logo-area {
+        background-image: url('../img/uet_logo.png');
+        background-color: transparent;
+        min-height: 80px;
+        width: 250px;
+    }
+
+    .page-topbar .quick-area .info-menu li a.sidebar_toggle i {
+        margin-top: 28px;
+    }
+
+    .page-topbar .quick-area .info-menu {
+        min-height: 80px;
+    }
+
+    .page-topbar .quick-area .slantit .info-menu {
+        background-color: transparent;
+    }
+
+    .page-topbar.sidebar_shift .logo-area {
+        background-image: url('../img/uet_logo.png');
+    }
+
+    .page-topbar.sidebar_shift .logo-area {
+        background-color: transparent;
+    }
+
+    .page-topbar .quick-area .info-menu {
+        height: 80px;
+        line-height: 80px;
+    }
+
+        .page-topbar .quick-area .info-menu .profile .profile-status {
+            top: 18px;
+            display:none;
+        }
+
+        .page-topbar .quick-area .info-menu li.profile a img {
+            top: -2px;
+        }
+
+        .page-topbar .quick-area .info-menu li a.sidebar_toggle {
+            color: #008E32;
+        }
+
+.info-menu .profile .profile-status, .profile-info .profile-image .profile-status {
+    border: 2px solid #008E32;
+}
+
+.main-wrapper {
+    margin-top: 0px;
+}
+
+#main-content {
+    margin-left: 250px;
+}
+
+.page-sidebar {
+    margin-top: 80px;
+    background-color: #05A038;
+    width: 250px;
+}
+
+
+.content-wrapper {
+    padding: 0px 20px 0 20px;
+}
+
+#main-menu-wrapper li a {
+    color: #F5F5F5;
+    padding: 10px 0 10px 5px;
+}
+
+    #main-menu-wrapper li a:hover, #main-menu-wrapper li.active a {
+        background-color: #008E32;
+        color: #F5F5F5;
+    }
+
+#main-menu-wrapper ul {
+    font-size: 16px;
+}
+
+#main-menu-wrapper li.active ul {
+    background-color: #008E32;
+}
+
+.page-sidebar.chat_shift #main-menu-wrapper .wraplist li .sub-menu .sub-menu .active a, .page-sidebar.chat_shift #main-menu-wrapper .wraplist li.active .sub-menu a, .page-sidebar.chat_shift #main-menu-wrapper .wraplist li .sub-menu a, .page-sidebar.chat_shift #main-menu-wrapper .wraplist li .sub-menu .active .sub-menu a, .page-sidebar.collapseit #main-menu-wrapper .wraplist li .sub-menu .active a, .page-sidebar.collapseit #main-menu-wrapper .wraplist li.active .sub-menu a, .page-sidebar.collapseit #main-menu-wrapper .wraplist li .sub-menu a, .page-sidebar.collapseit #main-menu-wrapper .wraplist li .sub-menu .active .sub-menu a {
+    color: #F5F5F5;
+}
+
+    .page-sidebar.chat_shift #main-menu-wrapper .wraplist li .sub-menu .sub-menu .active a, .page-sidebar.chat_shift #main-menu-wrapper .wraplist li.active .sub-menu a:hover, .page-sidebar.chat_shift #main-menu-wrapper .wraplist li .sub-menu a:hover, .page-sidebar.chat_shift #main-menu-wrapper .wraplist li .sub-menu .active .sub-menu a:hover, .page-sidebar.collapseit #main-menu-wrapper .wraplist li .sub-menu .active a, .page-sidebar.collapseit #main-menu-wrapper .wraplist li.active .sub-menu a:hover, .page-sidebar.collapseit #main-menu-wrapper .wraplist li .sub-menu a:hover, .page-sidebar.collapseit #main-menu-wrapper .wraplist li .sub-menu .active .sub-menu a:hover {
+        background-color: #05A038;
+        color: #F5F5F5;
+    }
+
+#main-menu-wrapper li.active .sub-menu a {
+    color: #F5F5F5;
+    padding-left: 5px;
+}
+
+    #main-menu-wrapper li.active .sub-menu .active a, #main-menu-wrapper li.active .sub-menu .active .sub-menu .active a, #main-menu-wrapper li.active .sub-menu .active .sub-menu a:hover, #main-menu-wrapper li.active .sub-menu a.active, #main-menu-wrapper li.active .sub-menu a:hover, #main-menu-wrapper li .sub-menu a:hover {
+        background-color: #05A038;
+    }
+
+.page-sidebar.chat_shift #main-menu-wrapper, .page-sidebar.collapseit #main-menu-wrapper {
+    background-color: #05A038;
+}
+
+.page-sidebar.chat_shift .wraplist, .page-sidebar.collapseit .wraplist {
+    background-color: #05A038;
+}
+
+#main-content .mobile-pagetitle {
+    display: block;
+    margin-top: 80px;
+}
+
+    #main-content .mobile-pagetitle h1 {
+        padding: 0px;
+        margin: 15px 35px 0 35px;
+        font-size: 25px;
+        border-bottom: 1px solid #008E32;
+    }
+
+.btn.btn-primary {
+    background: #008E32;
+}
+
+.quick-area #banner-title {
+    display: block !important;
+}
+
+    .quick-area #banner-title h1 {
+        color: #008E32;
+        line-height: 80px;
+        font-size: 2.6vw;
+        font-weight: 600;
+    }
+
+.quick-area .pagetitle {
+    display: none;
+}
+
+#main-menu-wrapper li a i {
+    width: auto;
+    top: 6px;
+}
+
+#main-menu-wrapper li a {
+    text-align: left;
+}
+
+    #main-menu-wrapper li a .title {
+        display: inline;
+    }
+
+#main-menu-wrapper li.active a.nosub .title {
+    display: inline;
+}
+
+#main-menu-wrapper li a .arrow {
+    top: 18px;
+    margin-right: 10px;
+}
+
+#main-menu-wrapper li.active a i {
+    margin-left: 0px;
+    top: 6px;
+    font-size: 24px;
+}
+
+#main-menu-wrapper li.active a .title {
+    line-height: 35px;
+    margin-left: 0px;
+}
+
+#main-menu-wrapper li ul.sub-menu {
+    padding-left: 20px;
+}
+
+.page-topbar .quick-area .info-menu li.profile img {
+    height: 40px;
+    width: 40px;
+}
+/*End custom giao dien*/

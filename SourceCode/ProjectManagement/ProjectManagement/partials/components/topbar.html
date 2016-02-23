@@ -1,0 +1,72 @@
+﻿<!-- START TOPBAR -->
+<div class='logo-area'>
+</div>
+<div class='quick-area'>
+    <div class='pull-left slantit'>
+        <ul class="info-menu left-links list-inline list-unstyled">
+            <li class="sidebar-toggle-wrap">
+                <a href data-toggle="sidebar" class="sidebar_toggle" ng-click="app.settings.menuFolded = !app.settings.menuFolded; menuChatToggle('menu',app.settings.menuFolded) ">
+                    <i class="material-icons">menu</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="banner-title" class="pull-left" style="display:none;">
+        <span class='line'></span>
+        <h1>QUẢN LÝ ĐỀ TÀI KHOA HỌC CÔNG NGHỆ</h1>
+        <div></div>
+    </div>
+    <div class="pull-left pagetitle">
+        <span class='line'></span>
+        <h1>{{app.settings.pagetitle}}</h1>
+        <div></div>
+    </div>
+    <div class="pull-left quickleft" style=''>
+        <ul class="info-menu right-links list-inline list-unstyled">
+        </ul>
+    </div>
+    <!--<div class='pull-left searchbar'>
+        <ul class="info-menu right-links list-inline list-unstyled">
+            <li class="hidden-md hidden-sm hidden-xs searchform" searchgroup>
+                <div class="input-group">
+                    <span class="input-group-addon input-focus">
+                        <i class="material-icons">search</i>
+                    </span>
+                    <form action="search-page.html" method="post">
+                        <input type="text" class="form-control animated fadeIn" placeholder="">
+                        <input type='submit' value="">
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>-->
+    <div class='pull-right quickright' ng-controller="notificationController">
+        <ul class="info-menu right-links list-inline list-unstyled">
+
+            <li class="dropdown profile tab" uib-dropdown>
+                <a href class="dropdown-toggle toggle" uib-dropdown-toggle>
+                    <img src="img/man_brown.png" alt="user-image" class="img-circle img-inline">
+                    <span class="profile-status available"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right profile animated fadeIn">
+                    <li>
+                        <div style="text-align:center; font-weight:bold ">
+                            {{UserName}}
+                        </div>
+                    </li>
+                    <li>
+                        <a href="" ng-click="FnChangePassword()">
+                            <i class="material-icons">lock</i> Thay đổi mật khẩu
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="login" ng-click="fnLogOut()">
+                            <i class="material-icons">power_settings_new</i> Đăng xuất
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END TOPBAR -->

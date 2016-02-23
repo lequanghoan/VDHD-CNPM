@@ -1,0 +1,6 @@
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement\bin\ProjectManagement.dll.config
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement\bin\ProjectManagement.dll
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement\bin\ProjectManagement.pdb
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement\obj\Debug\ProjectManagement.csprojResolveAssemblyReference.cache
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement\obj\Debug\ProjectManagement.dll
+D:\Projects\2016-QuanlyNVKH\01.SourceCode\ProjectManagement\ProjectManagement\obj\Debug\ProjectManagement.pdb

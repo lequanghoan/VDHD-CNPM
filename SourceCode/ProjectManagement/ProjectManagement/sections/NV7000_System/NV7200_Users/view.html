@@ -1,0 +1,120 @@
+
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Cán bộ';">
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Thông tin tìm kiếm</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                </div>
+            </header>
+            <div class="content-body padding-top-30 padding-bottom-30">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Tên Cán bộ</label>
+                                <span class="desc"></span>
+                                <div class="controls">
+                                    <input class="form-control" placeholder="Tên Cán bộ" ng-model="vm.SearchEntity.FullName">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Chức vị</label>
+                                <span class="desc"></span>
+                                <div class="input-group" inputgroup>
+                                    <select class="form-control" name="position" data-ng-model="vm.SearchEntity.Position">
+                                        <option value="0">&lt;Tất cả&gt;</option>
+                                        <option value="1">Trưởng phòng</option>
+                                        <option value="2">Phó phòng</option>
+                                        <option value="3">Chuyên viên</option>
+                                        <option value="4">Giám đốc</option>
+                                        <option value="5">Phó Giám đốc</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="form-label">Trạng thái</label>
+                                    <span class="desc"></span>
+                                    <div class="input-group" inputgroup>
+                                        <select class="form-control" name="status" data-ng-model="vm.SearchEntity.Status">
+                                            <option value="0">&lt;Tất cả&gt;</option>
+                                            <option value="1">Khóa</option>
+                                            <option value="2">Chưa khóa</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+                        <button type="submit" ng-disabled="searchForm.$invalid" class="btn btn-primary" ng-click="vm.FnSearch()">Tìm kiếm</button>
+                        <button type="button" class="btn btn-primary" ng-click="vm.FnClear()">Xóa điều kiện</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Danh sách Cán bộ</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                </div>
+            </header>
+            <div class="content-body padding-top-30 padding-bottom-30">
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button type="button" class="btn btn-primary margin-bottom-15" ng-click="vm.FnCreate()">Thêm mới</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="overflow: auto">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th width="50">STT</th>
+                                    <th>Tên</th>
+                                    <th>Email</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Phòng ban</th>
+                                    <th>Chức vụ</th>
+                                    <th>Trạng thái</th>
+                                    <th width="90">Xử lý</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="row in vm.ListData">
+                                    <td style="text-align:right">{{$index+1}}</td>
+                                    <td><a href="javascript:;" ng-click="vm.FnEdit(row.UserId)">{{row.FullName}}</a></td>
+                                    <td>{{row.Email}}</td>
+                                    <td>{{row.Address}}</td>
+                                    <td>{{row.DepartmentName}}</td>
+                                    <td>{{vm.Convert(row.Position)}}</td>
+                                    <td>
+                                        <select class="form-control" data-ng-model="row.LockoutEnabled"
+                                                data-ng-options="unit.id as unit.name for unit in vm.ListStatus"
+                                                ng-change="vm.FnChangeLock(row)"></select>
+                                    </td>
+                                    <td style="text-align:center">
+                                        <!--<button type="button" class="btn btn-warning" ng-click="vm.FnLockUser(row)"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></button>-->
+                                        <button type="button" class="btn btn-danger" ng-click="vm.FnDelete(row.UserId)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+

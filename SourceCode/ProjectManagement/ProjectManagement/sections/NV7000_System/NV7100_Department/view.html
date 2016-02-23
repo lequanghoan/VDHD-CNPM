@@ -1,0 +1,74 @@
+
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Phòng/Ban';">
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Thông tin tìm kiếm</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                </div>
+            </header>
+            <div class="content-body padding-top-30 padding-bottom-30">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Tên Phòng/Ban</label>
+                                <span class="desc"></span>
+                                <div class="controls">
+                                    <input class="form-control" placeholder="Tên Phòng/Ban" ng-model="vm.SearchEntity.DepartmentName">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+                        <button type="submit" class="btn btn-primary" ng-click="vm.FnSearch()">Tìm kiếm</button>
+                        <button type="button" class="btn btn-primary" ng-click="vm.FnClear()">Xóa điều kiện</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Danh sách Phòng/Ban</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                </div>
+            </header>
+            <div class="content-body padding-top-30 padding-bottom-30">
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button type="button" class="btn btn-primary margin-bottom-15" ng-click="vm.FnCreate()">Thêm mới</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="overflow: auto">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th width="50px">STT</th>
+                                    <th>Tên Phòng/Ban</th>
+                                    <th>Ghi chú</th>
+                                    <th width="80px">Xử lý</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="row in vm.ListData">
+                                    <td style="text-align:right">{{$index+1}}</td>
+                                    <td><a href="javascript:;" ng-click="vm.FnEdit(row.DepartmentId)">{{row.DepartmentName}}</a></td>
+                                    <td>{{row.Note}}</td>
+                                    <td style="text-align:center">
+                                        <button type="button" class="btn btn-danger" ng-click="vm.FnDelete(row.DepartmentId)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

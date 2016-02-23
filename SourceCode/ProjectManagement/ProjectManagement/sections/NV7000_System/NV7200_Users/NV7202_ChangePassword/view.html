@@ -1,0 +1,58 @@
+<style type="text/css">
+    .text-orange {
+        color: #FF6E40;
+    }
+</style>
+<style>
+    .app-modal-window-select-create .modal-dialog {
+        width: 50%;
+    }
+</style>
+<div class="modal-header">
+    <h3 class="modal-title text-orange text-uppercase">Thay đổi mật khẩu</h3>
+    <button type="button" class="close" ng-click="vmChangePassword.FnCloseModal()" aria-hidden="true">&times;</button>
+</div>
+<div class="modal-body">
+    <form name="addForm">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="form-label">{{vmChangePassword.UserEntity.USERNAME}}</label>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="form-label">Mật khẩu cũ<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <input type="password" placeholder="Mật khẩu cũ" class="form-control" maxlength="32" required ng-model="vmChangePassword.UserEntity.OLDPASSWORD">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="form-label">Mật khẩu mới<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <input type="password" placeholder="Mật khẩu mới" class="form-control" maxlength="32" required ng-model="vmChangePassword.UserEntity.NEWPASSWORD">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="form-label">Nhắc lại mật khẩu<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <input type="password" placeholder="Nhắc lại mật khẩu" class="form-control" maxlength="32" required ng-model="vmChangePassword.UserEntity.CONFIRMNEWPASSWORD">
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-disabled="addForm.$invalid" ng-click="vmChangePassword.FnChangePassword()">Cập nhật</button>
+    <button class="btn btn-default" ng-click="vmChangePassword.FnCloseModal()">Thoát</button>
+</div>

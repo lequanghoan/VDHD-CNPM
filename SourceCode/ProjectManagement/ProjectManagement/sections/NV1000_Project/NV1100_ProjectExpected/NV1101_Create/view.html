@@ -1,0 +1,107 @@
+<style type="text/css">
+    .text-orange {
+        color: #FF6E40;
+    }
+</style>
+<style>
+    .app-modal-window-select-create .modal-dialog {
+        width: 85%;
+    }
+</style>
+<div class="modal-header">
+    <h3 class="modal-title text-orange text-uppercase">Thêm mới Nhiệm vụ dự kiến</h3>
+</div>
+<div class="modal-body">
+   <form name="createForm">
+       <div class="row">
+           <div class="col-lg-12 col-md-12 col-sm-12">
+               <div class="row">
+                   <div class="col-md-4">
+                       <label class="form-label">Tên Nhiệm vụ<span class="text-danger text-strong">&nbsp;*</span></label>
+                       <div class="controls">
+                           <input type="text" class="form-control" maxlength="2000" ng-model="vmCreate.CreateEntity.ProjectNameExpected" required>
+                       </div>
+                   </div>
+                   <div class="col-md-4">
+                       <label class="form-label">Tên Đơn vị thực hiện<span class="text-danger text-strong">&nbsp;*</span></label>
+                       <div class="controls">
+                           <input type="text" class="form-control" maxlength="500" ng-model="vmCreate.CreateEntity.Agency" required>
+                       </div>
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="row margin-top-10">
+                       <div class="col-md-4">
+                           <label class="form-label col-md-6 margin-top-5" for="field-6">Năm kế hoạch<span class="text-danger text-strong">&nbsp;*</span></label>
+                           <div class="col-md-6">
+                               <input type="number" class="form-control" maxlength="4" ng-model="vmCreate.CreateEntity.PlanYear" required>
+                           </div>
+                       </div>
+                       <div class="col-md-5">
+                           <label class="form-label col-md-4 margin-top-5" for="field-6">Loại</label>
+                           <div class="col-md-4">
+                               <div class="radio-inline">
+                                   <label class="icheck" style="float:left">
+                                       <input type="radio" name="projectType" style="position: absolute" ng-model="vmCreate.CreateEntity.ProjectType" value="1">
+                                       <i></i>
+                                   </label>
+                                   <p style="float:left">Đề tài</p>
+                               </div>
+                           </div>
+                           <div class="col-md-4">
+                               <div class="radio-inline">
+                                   <label class="icheck" style="float:left">
+                                       <input type="radio" name="projectType" style="position: absolute" ng-model="vmCreate.CreateEntity.ProjectType" value="2">
+                                       <i></i>
+                                   </label>
+                                   <p style="float:left">Dự án</p>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="row margin-top-10">
+                   <div class="col-md-6">
+                       <label class="form-label">Tính cấp thiết, tính mới, tính tiên tiến:</label>
+                       <div class="controls">
+                           <textarea class="form-control" cols="5" ng-model="vmCreate.CreateEntity.Necessary"></textarea>
+                       </div>
+                   </div>
+                   <div class="col-md-6">
+                       <label class="form-label">Mục tiêu nghiên cứu dự kiến:</label>
+                       <div class="controls">
+                           <textarea class="form-control" cols="5" ng-model="vmCreate.CreateEntity.TargetExpected"></textarea>
+                       </div>
+                   </div>
+               </div>
+               <div class="row margin-top-10">
+                   <div class="col-md-6">
+                       <label class="form-label">Tóm tắt nội dung nghiên cứu dự kiến:</label>
+                       <div class="controls">
+                           <textarea class="form-control" cols="5" ng-model="vmCreate.CreateEntity.ContentExpected"></textarea>
+                       </div>
+                   </div>
+                   <div class="col-md-6">
+                       <label class="form-label">Sản phẩm khoa học và công nghệ dự kiến:</label>
+                       <div class="controls">
+                           <textarea class="form-control" cols="5" ng-model="vmCreate.CreateEntity.ProductExpected"></textarea>
+                       </div>
+                   </div>
+               </div>
+               <div class="row margin-top-10">
+                   <div class="col-md-4">
+                       <label class="form-label">Kinh phí dự kiến:</label>
+                       <div class="controls">
+                           <currency-full model-money="vmCreate.CreateEntity.FundsForExpected" max-length="18"></currency-full>
+                           <!--<input type="number" maxlength="14" ng-model="vmCreate.CreateEntity.FundsForExpected" />-->
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-disabled="createForm.$invalid" ng-click="vmCreate.FnSave()">Thêm</button>
+    <button class="btn btn-default" ng-click="vmCreate.FnCancel()">Thoát</button>
+</div>

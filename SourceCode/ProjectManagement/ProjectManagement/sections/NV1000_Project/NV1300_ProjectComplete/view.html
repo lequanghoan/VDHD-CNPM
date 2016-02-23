@@ -1,0 +1,137 @@
+﻿<style type="text/css">
+    .app-modal-window .modal-dialog {
+        width: 90%;
+    }
+
+    tr td {
+        vertical-align: middle !important;
+    }
+
+    tr th {
+        vertical-align: top !important;
+    }
+</style>
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Nhiệm vụ đã kết thúc';">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <form name="searchForm">
+            <section class="box ">
+                <header class="panel_header">
+                    <h2 class="title pull-left">Thông tin tìm kiếm</h2>
+                    <div class="actions panel_actions pull-right">
+                        <i class="box_toggle material-icons">expand_more</i>
+                    </div>
+                </header>
+                <div class="content-body padding-top-30 padding-bottom-30">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-label" for="field-1">Tên đề tài/dự án</label>
+                                    <span class="desc"></span>
+                                    <div class="controls">
+                                        <input type="text" class="form-control" ng-model="vm.SearchEntity.ProjectName" placeholder="Tên đề tài/dự án">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-label" for="field-1">Loại</label>
+                                    <span class="desc"></span>
+                                    <div class="input-group" inputgroup>
+                                        <select class="form-control" name="type" data-ng-model="vm.SearchEntity.ProjectType" data-ng-options="unit.value as unit.name for unit in vm.options.type"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-label" for="field-1">Phòng ban</label>
+                                    <span class="desc"></span>
+                                    <div class="input-group" inputgroup>
+                                        <select class="form-control" name="dept" data-ng-model="vm.SearchEntity.DepartmentId" data-ng-options="unit.DepartmentId as unit.DepartmentName for unit in vm.options.department"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-label" for="field-1">Năm</label>
+                                    <span class="desc"></span>
+                                    <div class="input-group" inputgroup>
+                                        <select class="form-control" name="year" data-ng-model="vm.SearchEntity.PlanYear" data-ng-options="unit.value as unit.name for unit in vm.options.year"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+                            <button type="submit" ng-click="vm.FnSearch()" ng-disabled="searchForm.$invalid" class="btn btn-primary">Tìm kiếm</button>
+                            <button type="button" ng-click="vm.FnClear()" class="btn btn-primary">Xoá điều kiện</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Danh sách nhiệm vụ</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                </div>
+            </header>
+            <div class="content-body padding-top-30 padding-bottom-30">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="overflow: auto">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th width="50px">STT</th>
+                                    <th width="73px">Loại</th>
+                                    <th width="50px">Năm</th>
+                                    <th>Tên nhiệm vụ</th>
+                                    <th>Đơn vị thực hiện</th>
+                                    <th>Chủ nhiệm</th>
+                                    <th>Phòng Quản lý</th>
+                                    <th>Kinh phí</th>
+                                    <!--<th width="60px">Duyệt K.Phí</th>-->
+                                    <th>Ngày nghiệm thu</th>
+                                    <th>Kết quả</th>
+                                    <th width="138px">Xử lý</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="row in vm.data">
+                                    <td style="text-align: right">{{$index+1}}</td>
+                                    <td>{{row.ProjectTypeName}}</td>
+                                    <td>{{row.PlanYear}}</td>
+                                    <td><a href="javascript:;" ng-click="vm.showModal()">{{row.ProjectName}}</a></td>
+                                    <td>{{row.Agency}}</td>
+                                    <td>{{row.UserMain}}</td>
+                                    <td>{{row.DepartmentName}}</td>
+                                    <td class="text-right">{{row.FundsFor | currency:"":0}}</td>
+                                    <!--<td class="text-center">
+                                        <div class="checkbox">
+                                            <label class="icheck">
+                                                <input type="checkbox" ng-model="row.checkmoney" ng-checked="row.checkmoney == '1'" ng-true-value="'1'" ng-false-value="'0'">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                    </td>-->
+                                    <th>{{row.AcceptDate|date:'dd/MM/yyyy'}}</th>
+                                    <th>{{vm.Convert(row.Result)}}</th>
+                                    <td>
+                                        <button type="button" class="btn btn-info" ng-click="vm.showUpdateMoney()"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span></button>
+                                        <button type="button" class="btn btn-warning" ng-click="vm.showProgress()"><span class="glyphicon glyphicon-signal" aria-hidden="true"></span></button>
+                                        <button type="button" class="btn btn-success" ng-click="vm.showFile()"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></button>
+                                        <button type="button" class="btn btn-primary" ng-click="vm.showAuthorize()"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

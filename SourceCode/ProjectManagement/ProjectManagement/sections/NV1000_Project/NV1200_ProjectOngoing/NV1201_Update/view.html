@@ -1,0 +1,258 @@
+﻿<style type="text/css">
+    table tr td:first-child {
+        background-color: #FF6E40;
+        color: white;
+        font-weight: bold;
+    }
+
+    .text-orange {
+        color: #FF6E40;
+    }
+
+    .modal-body {
+        background-color: #F5F5F5;
+    }
+</style>
+
+<div class="modal-header">
+    <h3 class="modal-title text-orange text-uppercase">Chi tiết nhiệm vụ Khoa học Công Nghệ</h3>
+</div>
+<div class="modal-body">
+    <form name="formCreate">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <table class="table table-bordered bg-white">
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <label class="form-label" for="field-6">Tên nhiệm vụ <span class="text-danger text-strong">*</span></label>
+                            <div class="controls">
+                                <textarea ng-model="vmUpdate.UpdateEntity.ProjectName" name="ProjectName" class="form-control" cols="5" id="field-6" placeholder="Tên nhiệm vụ" maxlength="2000" required></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <label class="form-label" for="field-6">Tên đơn vị thực hiện <span class="text-danger text-strong">*</span></label>
+                            <div class="controls">
+                                <textarea ng-model="vmUpdate.UpdateEntity.Agency" name="Agency" class="form-control" cols="5" id="field-6" placeholder="Tên đơn vị thực hiện" maxlength="500" required></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <div class="row">
+                                <label class="form-label col-md-2 margin-top-5">Kế hoạch năm <span class="text-danger text-strong">*</span></label>
+                                <div class="col-md-4">
+                                    <input type="number" ng-model="vmUpdate.UpdateEntity.PlanYear" name="PlanYear" class="form-control" placeholder="Kế hoạch năm" maxlength="4" required>
+                                </div>
+                                <label class="form-label col-md-2 margin-top-5">Loại</label>
+                                <div class="col-md-2" inputgroup>
+                                    <select class="form-control" name="type" data-ng-model="vmUpdate.UpdateEntity.ProjectType" data-ng-options="unit.value as unit.name for unit in vmUpdate.options.type"></select>
+                                </div>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-12">
+                                    <label class="form-label" for="field-1">Họ và tên</label>
+                                    <span class="desc"></span>
+                                    <div class="controls">
+                                        <input type="text" ng-model="vmUpdate.UpdateEntity.UserMain" class="form-control"  placeholder="Họ và tên" maxlength="500">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <label class="form-label" for="field-1">Giới tính</label>
+                                    <span class="desc"></span>
+                                    <div class="input-group" inputgroup>
+                                        <select class="form-control" name="type" data-ng-model="vmUpdate.UpdateEntity.Gender" data-ng-options="unit.value as unit.name for unit in vmUpdate.options.gender"></select>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <label class="form-label" for="field-1">Trình độ chuyên môn</label>
+                                    <span class="desc"></span>
+                                    <div class="controls">
+                                        <input type="text" ng-model="vmUpdate.UpdateEntity.Degree" class="form-control"  placeholder="Trình độ chuyên môn" maxlength="500">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <label class="form-label" for="field-1">Chức danh khoa học</label>
+                                    <span class="desc"></span>
+                                    <div class="controls">
+                                        <input type="text" ng-model="vmUpdate.UpdateEntity.AcademicTitles" class="form-control"  placeholder="Chức danh khoa học" maxlength="500">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-12">
+                                    <label class="form-label" for="field-1">Chức vụ</label>
+                                    <span class="desc"></span>
+                                    <div class="controls">
+                                        <input type="text" ng-model="vmUpdate.UpdateEntity.Position" class="form-control"  placeholder="Chức vụ" maxlength="300">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <label class="form-label" for="field-1">Email</label>
+                                    <span class="desc"></span>
+                                    <div class="controls">
+                                        <input type="text" ng-model="vmUpdate.UpdateEntity.Email" class="form-control"  placeholder="Email" maxlength="300">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <label class="form-label" for="field-1">Điện thoại</label>
+                                    <span class="desc"></span>
+                                    <div class="controls">
+                                        <input type="text" ng-model="vmUpdate.UpdateEntity.PhoneNumber" class="form-control"  placeholder="Điện thoại" maxlength="100">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12">
+                                    <label class="form-label" for="field-1">Fax</label>
+                                    <span class="desc"></span>
+                                    <div class="controls">
+                                        <input type="text" ng-model="vmUpdate.UpdateEntity.Fax" class="form-control"  placeholder="Fax" maxlength="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <label class="form-label" for="field-6">Danh sách cá nhân tham gia nhiệm vụ (Ghi rõ họ tên, chức danh khoa học, học vị)</label>
+                            <div class="controls">
+                                <textarea ng-model="vmUpdate.UpdateEntity.UsersJoin" class="form-control" cols="5" id="field-6" placeholder="Danh sách cá nhân tham gia nhiệm vụ" maxlength="2000"></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>
+                            <label class="form-label" for="field-6">Mục tiêu</label>
+                            <div class="controls">
+                                <textarea ng-model="vmUpdate.UpdateEntity.EconomyTarget" class="form-control" cols="5" id="field-6" placeholder="Mục tiêu"></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>
+                            <label class="form-label" for="field-6">Nội dung chính</label>
+                            <div class="controls">
+                                <textarea ng-model="vmUpdate.UpdateEntity.ProjectContent" class="form-control" cols="5" id="field-6" placeholder="Nội dung chính"></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>
+                            <div class="row">
+                                <label class="form-label col-md-12" for="field-6">Lĩnh vực</label>
+                                <div class="controls">
+                                    <div class="col-md-4" inputgroup>
+                                        <select class="form-control" name="type" data-ng-model="vmUpdate.UpdateEntity.CareerId" data-ng-options="unit.CareerId as unit.CareerName for unit in vmUpdate.options.careers">
+                                            <option value="">&lt;Tất cả&gt;</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>
+                            <label class="form-label" for="field-6">Phương pháp nghiên cứu/Giải pháp công nghệ</label>
+                            <div class="controls">
+                                <textarea ng-model="vmUpdate.UpdateEntity.Slogan" class="form-control" cols="5" id="field-6" placeholder="Phương pháp nghiên cứu/Giải pháp công nghệ"></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>
+                            <label class="form-label" for="field-6">Sản phẩm khoa học và công nghệ</label>
+                            <div class="controls">
+                                <textarea ng-model="vmUpdate.UpdateEntity.Product" class="form-control" cols="5" id="field-6" placeholder="Sản phẩm khoa học và công nghệ"></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>
+                            <label class="form-label" for="field-6">Địa chỉ và quy mô ứng dụng</label>
+                            <div class="controls">
+                                <textarea ng-model="vmUpdate.UpdateEntity.Size" class="form-control" cols="5" id="field-6" placeholder="Địa chỉ và quy mô ứng dụng"></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>
+                            <label class="form-label" for="for=" daterange-1"">Thời gian thực hiện</label>
+                            <div class="row">
+                                <label class="col-md-2 margin-top-5" for="field-6">Tháng/năm bắt đầu</label>
+                                <div class="col-md-2" inputgroup>
+                                    <select class="form-control" name="type" data-ng-model="vmUpdate.UpdateEntity.MonthFrom" data-ng-options="unit.value as unit.name for unit in vmUpdate.options.month"></select>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="number" ng-model="vmUpdate.UpdateEntity.YearFrom" class="form-control"  placeholder="Năm" maxlength="4">
+                                </div>
+                                <label class="col-md-2 margin-top-5" for="field-6">Tháng/năm kết thúc</label>
+                                <div class="col-md-2" inputgroup>
+                                    <select class="form-control" name="type" data-ng-model="vmUpdate.UpdateEntity.MonthTo" data-ng-options="unit.value as unit.name for unit in vmUpdate.options.month"></select>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="number" ng-model="vmUpdate.UpdateEntity.YearTo" class="form-control"  placeholder="Năm" maxlength="4">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>
+                            <div class="row">
+                                <label class="form-label col-md-3 margin-top-5" for="field-6">Kinh phí phê duyệt</label>
+                                <div class="col-md-4">
+                                    <currency-full model-money="vmUpdate.UpdateEntity.FundsFor"></currency-full>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>
+                            <div class="row">
+                                <label class="form-label col-md-3 margin-top-5" for="field-6">Quyết định phê duyệt</label>
+                                <div class="col-md-4">
+                                    <input type="text" ng-model="vmUpdate.UpdateEntity.ApproveNumber" class="form-control"  placeholder="Quyết định phê duyệt">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>
+                            <div class="row">
+                                <label class="form-label col-md-3 margin-top-5" for="field-6">Hợp đồng thực hiện</label>
+                                <div class="col-md-4">
+                                    <input type="text" ng-model="vmUpdate.UpdateEntity.ContractNumber" class="form-control" id="field-3" placeholder="Hợp đồng thực hiện" maxlength="100">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="vmUpdate.FnSave()" ng-disabled="formCreate.$invalid">Ghi</button>
+    <button class="btn btn-default" ng-click="vmUpdate.FnCancel()">Thoát</button>
+</div>

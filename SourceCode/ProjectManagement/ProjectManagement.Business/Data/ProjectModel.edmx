@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProjectManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Career">
+          <Key>
+            <PropertyRef Name="CareerId" />
+          </Key>
+          <Property Name="CareerId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="CareerName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Note" Type="ntext" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="DepartmentId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Note" Type="ntext" />
+        </EntityType>
+        <EntityType Name="HistoryLogs">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="LogContent" Type="ntext" Nullable="false" />
+          <Property Name="DateLog" Type="datetime" Nullable="false" />
+          <Property Name="UserLog" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Period">
+          <Key>
+            <PropertyRef Name="PeriodId" />
+          </Key>
+          <Property Name="PeriodId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Year" Type="int" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="AmountReutrn" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="AmountForward" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="BalanceForward" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ProjectId" Type="nvarchar" MaxLength="128" />
+          <Property Name="Note" Type="ntext" />
+        </EntityType>
+        <EntityType Name="PeriodDetails">
+          <Key>
+            <PropertyRef Name="PeriodDetailId" />
+          </Key>
+          <Property Name="PeriodDetailId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Type" Type="int" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="AmountDate" Type="datetime" />
+          <Property Name="AdvanceAmount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="AdvanceDate" Type="datetime" />
+          <Property Name="Payment" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="PaymentDate" Type="datetime" />
+          <Property Name="Note" Type="ntext" />
+          <Property Name="ProjectId" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="PermissionId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProjectId" Type="nvarchar" MaxLength="128" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+          <Property Name="Role" Type="int" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="ProfileId" />
+          </Key>
+          <Property Name="ProfileId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProfileName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="ntext" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="500" />
+          <Property Name="ProjectId" Type="nvarchar" MaxLength="128" />
+          <Property Name="PathFile" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProjectName" Type="nvarchar" MaxLength="2000" />
+          <Property Name="ProjectType" Type="int" />
+          <Property Name="Agency" Type="nvarchar" MaxLength="500" />
+          <Property Name="FundsFor" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="MonthFrom" Type="int" />
+          <Property Name="MonthTo" Type="int" />
+          <Property Name="YearFrom" Type="int" />
+          <Property Name="YearTo" Type="int" />
+          <Property Name="PlanYear" Type="int" />
+          <Property Name="ProjectContent" Type="ntext" />
+          <Property Name="Target" Type="ntext" />
+          <Property Name="Necessary" Type="ntext" />
+          <Property Name="Product" Type="ntext" />
+          <Property Name="AcceptDate" Type="datetime" />
+          <Property Name="Result" Type="int" />
+          <Property Name="Lock" Type="bit" />
+          <Property Name="UserMain" Type="nvarchar" MaxLength="500" />
+          <Property Name="Note" Type="ntext" />
+          <Property Name="Gender" Type="int" />
+          <Property Name="Degree" Type="nvarchar" MaxLength="500" />
+          <Property Name="AcademicTitles" Type="nvarchar" MaxLength="500" />
+          <Property Name="Position" Type="nvarchar" MaxLength="300" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="300" />
+          <Property Name="UsersJoin" Type="nvarchar" MaxLength="2000" />
+          <Property Name="EconomyTarget" Type="ntext" />
+          <Property Name="Slogan" Type="ntext" />
+          <Property Name="Size" Type="ntext" />
+          <Property Name="ApproveNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="ContractNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="TargetExpected" Type="ntext" />
+          <Property Name="ContentExpected" Type="ntext" />
+          <Property Name="ProductExpected" Type="ntext" />
+          <Property Name="FundsForExpected" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="ProjectNameExpected" Type="nvarchar" MaxLength="2000" />
+          <Property Name="UserCreateId" Type="nvarchar" MaxLength="128" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UserUpdateId" Type="nvarchar" MaxLength="128" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="DepartmentId" Type="nvarchar" MaxLength="128" />
+          <Property Name="CareerId" Type="nvarchar" MaxLength="128" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="ScheduleId" />
+          </Key>
+          <Property Name="ScheduleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ScheduleName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Content" Type="ntext" />
+          <Property Name="MonthFrom" Type="int" />
+          <Property Name="YearFrom" Type="int" />
+          <Property Name="MonthTo" Type="int" />
+          <Property Name="YearTo" Type="int" />
+          <Property Name="IsComplete" Type="bit" />
+          <Property Name="Note" Type="ntext" />
+          <Property Name="ProjectId" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="DepartmentId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Birthday" Type="datetime" />
+          <Property Name="RoleAdmin" Type="bit" Nullable="false" />
+          <Property Name="Position" Type="int" />
+        </EntityType>
+        <Association Name="FK__Users__Departmen__72C60C4A">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProjectManagementModelStoreContainer">
+          <EntitySet Name="Career" EntityType="Self.Career" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistoryLogs" EntityType="Self.HistoryLogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Period" EntityType="Self.Period" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PeriodDetails" EntityType="Self.PeriodDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Permission" EntityType="Self.Permission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Users__Departmen__72C60C4A" Association="Self.FK__Users__Departmen__72C60C4A">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProjectManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ProjectManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Careers" EntityType="ProjectManagementModel.Career" />
+          <EntitySet Name="Departments" EntityType="ProjectManagementModel.Department" />
+          <EntitySet Name="HistoryLogs" EntityType="ProjectManagementModel.HistoryLog" />
+          <EntitySet Name="Periods" EntityType="ProjectManagementModel.Period" />
+          <EntitySet Name="PeriodDetails" EntityType="ProjectManagementModel.PeriodDetail" />
+          <EntitySet Name="Permissions" EntityType="ProjectManagementModel.Permission" />
+          <EntitySet Name="Profiles" EntityType="ProjectManagementModel.Profile" />
+          <EntitySet Name="Projects" EntityType="ProjectManagementModel.Project" />
+          <EntitySet Name="Schedules" EntityType="ProjectManagementModel.Schedule" />
+          <EntitySet Name="Users" EntityType="ProjectManagementModel.User" />
+          <AssociationSet Name="FK__Users__Departmen__72C60C4A" Association="ProjectManagementModel.FK__Users__Departmen__72C60C4A">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Career">
+          <Key>
+            <PropertyRef Name="CareerId" />
+          </Key>
+          <Property Name="CareerId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="CareerName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="DepartmentId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="ProjectManagementModel.FK__Users__Departmen__72C60C4A" FromRole="Department" ToRole="User" />
+        </EntityType>
+        <EntityType Name="HistoryLog">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="LogContent" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateLog" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserLog" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Period">
+          <Key>
+            <PropertyRef Name="PeriodId" />
+          </Key>
+          <Property Name="PeriodId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="AmountReutrn" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="AmountForward" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="BalanceForward" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ProjectId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PeriodDetail">
+          <Key>
+            <PropertyRef Name="PeriodDetailId" />
+          </Key>
+          <Property Name="PeriodDetailId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="AmountDate" Type="DateTime" Precision="3" />
+          <Property Name="AdvanceAmount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="AdvanceDate" Type="DateTime" Precision="3" />
+          <Property Name="Payment" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="PermissionId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="ProfileId" />
+          </Key>
+          <Property Name="ProfileId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ProfileName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PathFile" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectName" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectType" Type="Int32" />
+          <Property Name="Agency" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FundsFor" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="MonthFrom" Type="Int32" />
+          <Property Name="MonthTo" Type="Int32" />
+          <Property Name="YearFrom" Type="Int32" />
+          <Property Name="YearTo" Type="Int32" />
+          <Property Name="PlanYear" Type="Int32" />
+          <Property Name="ProjectContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Target" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Necessary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Product" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AcceptDate" Type="DateTime" Precision="3" />
+          <Property Name="Result" Type="Int32" />
+          <Property Name="Lock" Type="Boolean" />
+          <Property Name="UserMain" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="Int32" />
+          <Property Name="Degree" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AcademicTitles" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="UsersJoin" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="EconomyTarget" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Slogan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ApproveNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ContractNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TargetExpected" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContentExpected" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductExpected" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FundsForExpected" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="ProjectNameExpected" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="UserCreateId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="UserUpdateId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="DepartmentId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="CareerId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="ScheduleId" />
+          </Key>
+          <Property Name="ScheduleId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ScheduleName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MonthFrom" Type="Int32" />
+          <Property Name="YearFrom" Type="Int32" />
+          <Property Name="MonthTo" Type="Int32" />
+          <Property Name="YearTo" Type="Int32" />
+          <Property Name="IsComplete" Type="Boolean" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Precision="3" />
+          <Property Name="RoleAdmin" Type="Boolean" Nullable="false" />
+          <Property Name="Position" Type="Int32" />
+          <NavigationProperty Name="Department" Relationship="ProjectManagementModel.FK__Users__Departmen__72C60C4A" FromRole="User" ToRole="Department" />
+        </EntityType>
+        <Association Name="FK__Users__Departmen__72C60C4A">
+          <End Type="ProjectManagementModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="ProjectManagementModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProjectManagementModelStoreContainer" CdmEntityContainer="ProjectManagementEntities">
+          <EntitySetMapping Name="Careers">
+            <EntityTypeMapping TypeName="ProjectManagementModel.Career">
+              <MappingFragment StoreEntitySet="Career">
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="CareerName" ColumnName="CareerName" />
+                <ScalarProperty Name="CareerId" ColumnName="CareerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="ProjectManagementModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HistoryLogs">
+            <EntityTypeMapping TypeName="ProjectManagementModel.HistoryLog">
+              <MappingFragment StoreEntitySet="HistoryLogs">
+                <ScalarProperty Name="UserLog" ColumnName="UserLog" />
+                <ScalarProperty Name="DateLog" ColumnName="DateLog" />
+                <ScalarProperty Name="LogContent" ColumnName="LogContent" />
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Periods">
+            <EntityTypeMapping TypeName="ProjectManagementModel.Period">
+              <MappingFragment StoreEntitySet="Period">
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="BalanceForward" ColumnName="BalanceForward" />
+                <ScalarProperty Name="AmountForward" ColumnName="AmountForward" />
+                <ScalarProperty Name="AmountReutrn" ColumnName="AmountReutrn" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="PeriodId" ColumnName="PeriodId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PeriodDetails">
+            <EntityTypeMapping TypeName="ProjectManagementModel.PeriodDetail">
+              <MappingFragment StoreEntitySet="PeriodDetails">
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="Payment" ColumnName="Payment" />
+                <ScalarProperty Name="AdvanceDate" ColumnName="AdvanceDate" />
+                <ScalarProperty Name="AdvanceAmount" ColumnName="AdvanceAmount" />
+                <ScalarProperty Name="AmountDate" ColumnName="AmountDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="PeriodDetailId" ColumnName="PeriodDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permissions">
+            <EntityTypeMapping TypeName="ProjectManagementModel.Permission">
+              <MappingFragment StoreEntitySet="Permission">
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profiles">
+            <EntityTypeMapping TypeName="ProjectManagementModel.Profile">
+              <MappingFragment StoreEntitySet="Profile">
+                <ScalarProperty Name="PathFile" ColumnName="PathFile" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProfileName" ColumnName="ProfileName" />
+                <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="ProjectManagementModel.Project">
+              <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CareerId" ColumnName="CareerId" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UserUpdateId" ColumnName="UserUpdateId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UserCreateId" ColumnName="UserCreateId" />
+                <ScalarProperty Name="ProjectNameExpected" ColumnName="ProjectNameExpected" />
+                <ScalarProperty Name="FundsForExpected" ColumnName="FundsForExpected" />
+                <ScalarProperty Name="ProductExpected" ColumnName="ProductExpected" />
+                <ScalarProperty Name="ContentExpected" ColumnName="ContentExpected" />
+                <ScalarProperty Name="TargetExpected" ColumnName="TargetExpected" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="ApproveNumber" ColumnName="ApproveNumber" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Slogan" ColumnName="Slogan" />
+                <ScalarProperty Name="EconomyTarget" ColumnName="EconomyTarget" />
+                <ScalarProperty Name="UsersJoin" ColumnName="UsersJoin" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="AcademicTitles" ColumnName="AcademicTitles" />
+                <ScalarProperty Name="Degree" ColumnName="Degree" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="UserMain" ColumnName="UserMain" />
+                <ScalarProperty Name="Lock" ColumnName="Lock" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="AcceptDate" ColumnName="AcceptDate" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Necessary" ColumnName="Necessary" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+                <ScalarProperty Name="ProjectContent" ColumnName="ProjectContent" />
+                <ScalarProperty Name="PlanYear" ColumnName="PlanYear" />
+                <ScalarProperty Name="YearTo" ColumnName="YearTo" />
+                <ScalarProperty Name="YearFrom" ColumnName="YearFrom" />
+                <ScalarProperty Name="MonthTo" ColumnName="MonthTo" />
+                <ScalarProperty Name="MonthFrom" ColumnName="MonthFrom" />
+                <ScalarProperty Name="FundsFor" ColumnName="FundsFor" />
+                <ScalarProperty Name="Agency" ColumnName="Agency" />
+                <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schedules">
+            <EntityTypeMapping TypeName="ProjectManagementModel.Schedule">
+              <MappingFragment StoreEntitySet="Schedule">
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+                <ScalarProperty Name="YearTo" ColumnName="YearTo" />
+                <ScalarProperty Name="MonthTo" ColumnName="MonthTo" />
+                <ScalarProperty Name="YearFrom" ColumnName="YearFrom" />
+                <ScalarProperty Name="MonthFrom" ColumnName="MonthFrom" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="ScheduleName" ColumnName="ScheduleName" />
+                <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ProjectManagementModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="RoleAdmin" ColumnName="RoleAdmin" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

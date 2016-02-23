@@ -1,0 +1,43 @@
+﻿<style type="text/css">
+    .modal-body {
+        background-color: #fff;
+    }
+</style>
+
+<div class="modal-header">
+    <h3 class="modal-title text-orange text-uppercase">Cập nhật kỳ cấp kinh phí</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <form name="formUpdate">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="form-group">
+                    <label class="form-label" for="field-1">Năm <span style="color: red">*</span></label>
+                    <span class="desc"></span>
+                    <div class="controls">
+                        <input type="text" class="form-control" id="field-1" placeholder="Năm" maxlength="4" ng-disabled="vmPopup.obj.type !== 0" ng-model="vmPopup.UpdateEntity.Year" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="field-1">Kinh phí phê duyệt</label>
+                    <span class="desc"></span>
+                    <div class="controls">
+                        <currency-full model-money="vmPopup.UpdateEntity.Amount"></currency-full>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="field-1">Kinh phí trả lại</label>
+                    <span class="desc"></span>
+                    <div class="controls">
+                        <currency-full model-money="vmPopup.UpdateEntity.AmountReutrn"></currency-full>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="vmPopup.FnSave()" ng-disabled="formUpdate.$invalid">Ghi</button>
+    <button class="btn btn-default" ng-click="vmPopup.FnCancel()">Thoát</button>
+</div>

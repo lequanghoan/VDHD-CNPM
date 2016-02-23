@@ -1,0 +1,340 @@
+INFO 2015-12-15 09:45:49 – Login successfully!
+INFO 2015-12-15 09:47:00 – Login successfully!
+INFO 2015-12-15 10:12:18 – Login successfully!
+INFO 2015-12-15 10:17:40 – Login successfully!
+INFO 2015-12-15 10:20:41 – Login successfully!
+INFO 2015-12-15 02:00:31 – Login successfully!
+INFO 2015-12-16 09:41:23 – Login successfully!
+INFO 2015-12-16 11:25:16 – Login successfully!
+ERROR2015-12-16 02:02:04 – CustomerController.Getlist_Csyslog_Group_Username tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-16 02:02:48 – AdminController.ExecOjectCommonByTable tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-16 02:47:38 – AdminController.ExecOjectCommonByTable tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-16 02:47:42 – AdminController.ExecOjectCommonByTable tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-16 02:47:48 – AdminController.ExecOjectCommonByTable tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-16 02:48:31 – AdminController.ExecOjectCommonByTable tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-16 02:56:50 – AdminController.GetDataComboxInfo tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-16 02:56:54 – AdminController.ExecOjectCommonByTable tr? v? DATA_ACCESS_FAIL code.
+INFO 2015-12-17 09:02:10 – Login successfully!
+INFO 2015-12-17 04:23:48 – Login successfully!
+INFO 2015-12-18 10:59:47 – Login successfully!
+INFO 2015-12-19 09:16:16 – Login successfully!
+INFO 2015-12-19 09:33:09 – Login successfully!
+INFO 2015-12-23 09:02:27 – Login successfully!
+ERROR2015-12-23 09:54:35 – AdminController.ExecOjectCommonByTable tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-23 10:01:32 – AdminController.ExecOjectCommonByTable tr? v? DATA_ACCESS_FAIL code.
+INFO 2015-12-25 02:55:39 – Login successfully!
+ERROR2015-12-25 04:43:11 – ReportController.GetDataCrystalReportCommon tr? v? DATA_ACCESS_FAIL code.
+INFO 2015-12-26 09:27:09 – Login successfully!
+INFO 2015-12-28 09:19:51 – Login successfully!
+FATAL2015-12-28 11:23:34 – Oracle.DataAccess.Client.OracleException ORA-12520: TNS:listener could not find available handler for requested type of server    at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2901
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in D:\Projects\viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in d:\Projects\viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2015-12-28 11:23:50 – Oracle.DataAccess.Client.OracleException ORA-12520: TNS:listener could not find available handler for requested type of server    at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2901
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in D:\Projects\viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in d:\Projects\viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2015-12-28 11:23:51 – Oracle.DataAccess.Client.OracleException ORA-12520: TNS:listener could not find available handler for requested type of server    at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2901
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in D:\Projects\viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in d:\Projects\viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2015-12-28 11:23:53 – Oracle.DataAccess.Client.OracleException ORA-12520: TNS:listener could not find available handler for requested type of server    at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2901
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in D:\Projects\viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in d:\Projects\viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2015-12-28 11:23:57 – Oracle.DataAccess.Client.OracleException ORA-12520: TNS:listener could not find available handler for requested type of server    at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2901
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in D:\Projects\viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in d:\Projects\viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2015-12-30 09:19:42 – Oracle.DataAccess.Client.OracleException ORA-12170: TNS:Connect timeout occurred    at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2901
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in D:\Projects\viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in d:\Projects\viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+INFO 2015-12-30 09:21:08 – Login successfully!
+WARN 2015-12-30 09:45:34 – Sai m?t kh?u. Vui l?ng ki?m tra l?i ho?c liên h? v?i Qu?n tr? H? th?ng
+WARN 2015-12-30 09:45:41 – Sai m?t kh?u. Vui l?ng ki?m tra l?i ho?c liên h? v?i Qu?n tr? H? th?ng
+WARN 2015-12-30 09:45:50 – Sai m?t kh?u. Vui l?ng ki?m tra l?i ho?c liên h? v?i Qu?n tr? H? th?ng
+INFO 2015-12-30 09:45:56 – Login successfully!
+WARN 2015-12-30 09:46:05 – Sai m?t kh?u. Vui l?ng ki?m tra l?i ho?c liên h? v?i Qu?n tr? H? th?ng
+WARN 2015-12-30 09:46:13 – Sai m?t kh?u. Vui l?ng ki?m tra l?i ho?c liên h? v?i Qu?n tr? H? th?ng
+INFO 2015-12-30 09:46:40 – Login successfully!
+ERROR2015-12-30 10:17:37 – AdminController.InsertGroup tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-30 10:17:44 – AdminController.InsertGroup tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-30 10:18:13 – AdminController.InsertGroup tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-30 10:18:46 – AdminController.InsertGroup tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-30 10:20:58 – AdminController.Updatetlugroup tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-30 10:21:04 – AdminController.Updatetlugroup tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-30 10:21:11 – AdminController.Updatetlugroup tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-30 10:21:43 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-30 10:21:47 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-30 10:23:14 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-30 10:23:26 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-30 10:23:27 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-30 10:27:50 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+ERROR2015-12-30 10:27:53 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+INFO 2015-12-31 02:12:40 – Login successfully!
+INFO 2016-01-05 09:14:37 – Login successfully!
+INFO 2016-01-05 10:06:12 – Login successfully!
+ERROR2016-01-05 10:18:43 – DebtBusiness.Apply_AInvoice_Relation_AccID tr? v? DATA_ACCESS_FAIL code.
+INFO 2016-01-05 05:01:16 – Login successfully!
+INFO 2016-01-07 02:37:16 – Login successfully!
+ERROR2016-01-07 02:37:50 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-07 02:39:29 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-07 02:40:21 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-07 02:40:49 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-07 02:41:41 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-07 02:43:57 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-07 02:45:17 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-07 02:45:26 – AdminController.GetMenuItems tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-07 03:01:29 – AdminController.GetDataComboxInfo tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-07 03:02:28 – AdminController.GetDataComboxInfo tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-07 04:43:01 – AdminController.DeleteProfiles tr? v? DATA_ACCESS_FAIL code.
+INFO 2016-01-08 09:16:27 – Login successfully!
+INFO 2016-01-08 09:23:00 – Login successfully!
+ERROR2016-01-08 09:35:08 – AdminController.ExecOjectCommonByTable tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-08 10:34:41 – MeterBusiness.Getlist_CardOnOff_ConID tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-08 10:35:03 – AdminController.GetDataComboxInfo tr? v? DATA_ACCESS_FAIL code.
+INFO 2016-01-08 10:55:36 – Login successfully!
+ERROR2016-02-08 11:05:09 – DebtBusiness.Apply_AInvoice_Relation_AccID tr? v? DATA_ACCESS_FAIL code.
+INFO 2016-01-08 04:20:12 – Login successfully!
+INFO 2016-01-08 04:27:15 – Login successfully!
+INFO 2016-01-11 08:50:30 – Login successfully!
+INFO 2016-01-11 09:00:16 – Login successfully!
+INFO 2016-01-11 09:04:30 – Login successfully!
+FATAL2016-02-11 09:13:39 – Oracle.DataAccess.Client.OracleException ORA-12545: Connect failed because target host or object does not exist    at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2901
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in D:\Projects\viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in d:\Projects\viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-02-11 09:13:47 – Oracle.DataAccess.Client.OracleException ORA-12545: Connect failed because target host or object does not exist    at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2901
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in D:\Projects\viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in d:\Projects\viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-02-11 09:14:32 – Oracle.DataAccess.Client.OracleException ORA-12545: Connect failed because target host or object does not exist    at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2901
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in D:\Projects\viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in d:\Projects\viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-02-11 09:15:14 – Oracle.DataAccess.Client.OracleException ORA-12545: Connect failed because target host or object does not exist    at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2901
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in D:\Projects\viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in d:\Projects\viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-02-11 09:16:27 – Oracle.DataAccess.Client.OracleException ORA-12545: Connect failed because target host or object does not exist    at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2901
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in D:\Projects\viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in d:\Projects\viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+INFO 2016-02-11 09:16:49 – Login successfully!
+INFO 2016-02-11 09:21:16 – Login successfully!
+INFO 2016-02-11 09:42:03 – Login successfully!
+ERROR2016-02-11 09:48:32 – CustomerController.Getlist_Csyslog tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-02-11 09:49:35 – AdminController.GetDataComboxInfo tr? v? DATA_ACCESS_FAIL code.
+INFO 2016-01-11 10:38:16 – Login successfully!
+ERROR2016-01-11 10:59:56 – ReportController.BillExportData tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-11 11:10:31 – ReportController.BillExportData tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-11 11:34:27 – ReportController.BillExportData tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-11 02:03:50 – AdminController.DeleteProfiles tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-11 02:04:13 – AdminController.DeleteProfiles tr? v? DATA_ACCESS_FAIL code.
+INFO 2016-01-11 02:14:15 – Login successfully!
+INFO 2016-01-11 02:56:10 – Login successfully!
+ERROR2016-01-11 02:57:48 – AdminController.ListDayCycle tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-11 02:57:53 – AdminController.ListDayCycle tr? v? DATA_ACCESS_FAIL code.
+ERROR2016-01-11 02:57:58 – AdminController.ListDayCycle tr? v? DATA_ACCESS_FAIL code.
+INFO 2016-01-11 02:58:52 – Login successfully!
+INFO 2016-01-11 03:00:16 – Login successfully!
+FATAL2016-01-13 09:41:58 – Oracle.DataAccess.Client.OracleException ORA-12514: TNS:listener does not currently know of service requested in connect descriptor    at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2901
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in D:\Projects\viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in d:\Projects\viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-13 09:44:52 – Oracle.DataAccess.Client.OracleException ORA-12170: TNS:Connect timeout occurred    at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2901
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in D:\Projects\viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in D:\Projects\viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in d:\Projects\viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+INFO 2016-01-13 09:46:44 – Login successfully!
+INFO 2016-01-13 10:02:07 – Login successfully!
+INFO 2016-01-13 10:03:47 – Login successfully!
+INFO 2016-01-13 10:06:37 – Login successfully!
+FATAL2016-01-14 10:55:27 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:00:40 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:04:33 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:04:35 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:04:36 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:04:36 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:05:36 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:06:23 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:06:56 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:07:18 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:24:57 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:29:21 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:36:10 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:39:43 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:39:47 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:40:01 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:44:46 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:45:39 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:46:19 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 11:47:06 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 01:55:28 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-01-14 01:56:03 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51
+FATAL2016-02-02 01:56:34 – System.NullReferenceException: Object reference not set to an instance of an object.
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2903
+   at Host.DataAccess.OracleHelperParameterCache.GetSpParameterSet(String connectionString, String spName) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 2882
+   at Host.DataAccess.OracleHelper.ExecuteDataTable(String connectionString, String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\OracleHelper.vb:line 893
+   at Host.DataAccess.DataHelper.ExecuteDataTable(String spName, Object[] parameterValues) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\DataAccess\DataHelper.vb:line 342
+   at Host.iImplemention.RemotingConnection.LoginController.Login(String userName, String password) in E:\01.Customer\04.Global\01.Viwaco\trunk\Host\Implementation\Admin\Class\LoginController.vb:line 624
+   at Viwaco.Business.LoginBusiness.Login(String userName, String password) in e:\01.Customer\04.Global\01.Viwaco\trunk\BusinessLayer\Viwaco.Business\LoginBusiness.cs:line 51

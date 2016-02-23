@@ -1,0 +1,121 @@
+<style type="text/css">
+    .text-orange {
+        color: #FF6E40;
+    }
+</style>
+<style>
+    .app-modal-window-select-create .modal-dialog {
+        width: 70%;
+    }
+</style>
+<div class="modal-header">
+    <h3 class="modal-title text-orange text-uppercase">Cập nhật Cán bộ</h3>
+</div>
+<div class="modal-body">
+    <form name="addForm">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Tên Cán bộ:<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <input type="text" class="form-control" maxlength="256" ng-model="vmUpdate.UpdateEntity.FullName" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Email:</label>
+                        <div class="controls">
+                            <input type="text" class="form-control" maxlength="256" ng-model="vmUpdate.UpdateEntity.Email">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Tên đăng nhập:<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <input type="text" class="form-control" maxlength="256" ng-model="vmUpdate.UpdateEntity.UserName" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Số điện thoại:</label>
+                        <div class="controls">
+                            <input type="text" class="form-control" ng-model="vmUpdate.UpdateEntity.PhoneNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Ngày sinh:</label>
+                        <div class="controls">
+                            <!--<input type="text" class="form-control" ng-model="vmUpdate.UpdateEntity.Birthday">-->
+                            <datepicker-full model-date="vmUpdate.UpdateEntity.Birthday"></datepicker-full>
+                            <!--<div class="input-group" inputgroup>
+                                <input type="date" class="form-control datepicker" uib-datepicker-popup ng-model="vmUpdate.UpdateEntity.Birthday" is-open="vmUpdate.DatePicker.open2" datepicker-options="vmUpdate.dateOptions" close-text="Đóng" datepicker-local-date />
+                                <span class="input-group-addon" ng-click="vmUpdate.DatePicker.open($event,'open2')"><i class="fa fa-calendar" style="color: #999;"></i></span>
+                            </div>-->
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Phòng ban:<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <select class="form-control" data-ng-model="vmUpdate.UpdateEntity.DepartmentId"
+                                    data-ng-options="unit.DepartmentId as unit.DepartmentName for unit in vmUpdate.ListDepartment" required>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Địa chỉ:</label>
+                        <div class="controls">
+                            <textarea class="form-control" cols="6" maxlength="500" ng-model="vmUpdate.UpdateEntity.Address"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Quyền:<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <div class="col-md-4">
+                                <div class="radio-inline">
+                                    <label class="icheck" style="float:left">
+                                        <input type="radio" style="position: absolute" ng-model="vmUpdate.UpdateEntity.RoleAdmin"
+                                               ng-checked="vmUpdate.UpdateEntity.RoleAdmin==true" value="true">
+                                        <i></i>
+                                    </label>
+                                    <p style="float:left">Admin</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="radio-inline">
+                                    <label class="icheck" style="float:left">
+                                        <input type="radio" style="position: absolute" ng-model="vmUpdate.UpdateEntity.RoleAdmin"
+                                               ng-checked="!vmUpdate.UpdateEntity.RoleAdmin" value="false">
+                                        <i></i>
+                                    </label>
+                                    <p style="float:left">Cán bộ thường</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Vị trí:<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <select class="form-control" data-ng-model="vmUpdate.UpdateEntity.Position"
+                                    data-ng-options="unit.id as unit.name for unit in vmUpdate.ListPosition" required>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="vmUpdate.FnSave()">Sửa</button>
+    <button class="btn btn-default" ng-click="vmUpdate.FnCancel()">Thoát</button>
+</div>
+<!--ng-disabled="addForm.$invalid"-->

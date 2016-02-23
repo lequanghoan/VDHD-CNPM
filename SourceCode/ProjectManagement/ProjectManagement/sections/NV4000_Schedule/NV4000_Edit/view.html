@@ -1,0 +1,84 @@
+<style type="text/css">
+    .text-orange {
+        color: #FF6E40;
+    }
+
+    .app-modal-window-select-create .modal-dialog {
+        width: 85%;
+    }
+</style>
+<div class="modal-header">
+    <h3 class="modal-title text-orange text-uppercase">Cập nhật Tiến độ</h3>
+</div>
+<div class="modal-body">
+    <form name="addForm">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Tên Sản phẩm:<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <input type="text" class="form-control" ng-model="vmUpdate.UpdateEntity.ScheduleName" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Nội dung thực hiện:<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <input type="text" class="form-control" required ng-model="vmUpdate.UpdateEntity.Content">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="form-label col-md-2 margin-top-5" for="field-6">Tiến độ thực hiện:<span class="text-danger text-strong">&nbsp;*</span></label>
+                    <div class="col-md-4">
+                        <label class="form-label col-md-6 margin-top-5" for="field-6">Từ tháng/năm</label>
+                        <div class="col-md-3">
+                            <select class="form-control" data-ng-model="vmUpdate.UpdateEntity.MonthFrom" required style="float:left"
+                                    data-ng-options="unit.id as unit.name for unit in vmUpdate.ListMonth"></select>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-control" data-ng-model="vmUpdate.UpdateEntity.YearFrom" required style="float:left"
+                                    data-ng-options="unit.id as unit.name for unit in vmUpdate.ListYear"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label col-md-6 margin-top-5" for="field-6">Đến tháng/năm</label>
+                        <div class="col-md-3">
+                            <select class="form-control" data-ng-model="vmUpdate.UpdateEntity.MonthTo" required style="float:left"
+                                    data-ng-options="unit.id as unit.name for unit in vmUpdate.ListMonth"></select>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-control" data-ng-model="vmUpdate.UpdateEntity.YearTo" required style="float:left"
+                                    data-ng-options="unit.id as unit.name for unit in vmUpdate.ListYear"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="form-label col-md-2 margin-top-5" for="field-6">Đã thực hiện:&nbsp;</label>
+                    <div class="col-md-2">
+                        <div class="checkbox">
+                            <label class="icheck">
+                                <input type="checkbox" style="position: absolute" ng-model="vmUpdate.UpdateEntity.IsComplete"
+                                       ng-checked="vmUpdate.UpdateEntity.IsComplete" ng-true-value="true" ng-false-value="false">
+                                <i></i>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Ghi chú:</label>
+                        <div class="controls">
+                            <input type="text" class="form-control" ng-model="vmUpdate.UpdateEntity.Note">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-disabled="addForm.$invalid" ng-click="vmUpdate.FnSave()">Lưu</button>
+    <button class="btn btn-default" ng-click="vmUpdate.FnCancel()">Thoát</button>
+</div>

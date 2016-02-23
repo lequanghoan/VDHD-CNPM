@@ -1,0 +1,168 @@
+﻿<style type="text/css">
+    .app-modal-window .modal-dialog {
+        width: 90%;
+    }
+
+    tr td {
+        vertical-align: middle !important;
+    }
+
+    tr th {
+        vertical-align: top !important;
+    }
+</style>
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Kinh phí';" ng-controller="ListMoneyCtrl as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box">
+            <header class="panel_header">
+                <h2 class="title pull-left">Thông tin tìm kiếm</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                </div>
+            </header>
+            <div class="content-body padding-top-30 padding-bottom-30">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Tên đề tài/dự án</label>
+                                <span class="desc"></span>
+                                <div class="controls">
+                                    <input type="text" class="form-control" id="field-1" ng-model="vm.searchCondition.projectName" placeholder="Tên đề tài/dự án">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Tình trạng</label>
+                                <span class="desc"></span>
+                                <div class="input-group" inputgroup>
+                                    <select class="form-control" name="status" data-ng-model="vm.searchCondition.status" data-ng-options="unit.value as unit.name for unit in vm.options.status"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Phòng ban</label>
+                                <span class="desc"></span>
+                                <select class="form-control" name="department" data-ng-model="vm.searchCondition.departmentId" data-ng-options="unit.DepartmentId as unit.DepartmentName for unit in vm.options.department">
+                                    <option value="">&lt;Tất cả&gt;</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Năm</label>
+                                <span class="desc"></span>
+                                <div class="input-group" inputgroup>
+                                    <select class="form-control" name="year" data-ng-model="vm.searchCondition.planYear" data-ng-options="unit.value as unit.name for unit in vm.options.year"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+                        <button type="button" class="btn btn-primary" ng-click="vm.FnSearch()">Tìm kiếm</button>
+                        <button type="button" class="btn btn-primary" ng-click="vm.FnClear()">Xoá điều kiện</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Danh sách nhiệm vụ</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                </div>
+            </header>
+            <div class="content-body padding-top-30 padding-bottom-30">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="overflow: auto">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th width="50px">STT</th>
+                                    <th width="73px">Năm kế hoạch</th>
+                                    <th>Tên nhiệm vụ</th>
+                                    <th>Đơn vị thực hiện</th>
+                                    <th>Phê duyệt</th>
+                                    <th>Đã cấp</th>
+                                    <th>Đã thanh toán</th>
+                                    <th>Chưa cấp</th>
+                                    <th>KP Trả lại</th>
+                                    <th>Chưa thanh toán</th>
+                                    <th>Xử lý</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="row in vm.projects">
+                                    <td>{{$index+1}}</td>
+                                    <!--<td rowspan="{{row.Count}}" ng-show="!($index%row.Count)">{{row.PlanYear}}</td>-->
+                                    <td>{{row.PlanYear}}</td>
+                                    <td>
+                                        {{row.ProjectName}}
+                                    </td>
+                                    <td>
+                                        {{row.Agency}}
+                                    </td>
+                                    <td class="text-right">
+                                        <a href="javascript:;" ng-click="vm.FnShowModal(row.ProjectId, row.FundsFor)">
+                                            {{row.FundsFor | currency:"":0}}
+                                        </a>
+                                    </td>
+                                    <td class="text-right">
+                                        {{row.Amount | currency:"":0}}
+                                    </td>
+                                    <td class="text-right">
+                                        {{row.Paid | currency:"":0}}
+                                    </td>
+                                    <td class="text-right">
+                                        {{row.FundsFor - row.Amount | currency:"":0}}
+                                    </td>
+                                    <td class="text-right">
+                                        {{row.GetBack | currency:"":0}}
+                                    </td>
+                                    <td class="text-right">
+                                        {{row.FundsFor - row.Paid | currency:"":0}}
+
+                                        <!--<currency-full model-money="row.FundsFor - row.Paid" view-type="label"></currency-full>-->
+                                    </td>
+                                    <td>
+                                        <button type="button" ng-click="vm.FnShowModal(row.ProjectId, row.FundsFor)" class="btn btn-info"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="4" class="text-right">
+                                        Tổng tiền
+                                    </td>
+                                    <td>
+                                        {{vm.total.fundsfor | currency:"":0}}
+                                    </td>
+                                    <td>
+                                        {{vm.total.amount | currency:"":0}}
+                                    </td>
+                                    <td>
+                                        {{vm.total.paid | currency:"":0}}
+                                    </td>
+                                    <td>
+                                        {{vm.total.notget | currency:"":0}}
+                                    </td>
+                                    <td>
+                                        {{vm.total.getback | currency:"":0}}
+                                    </td>
+                                    <td>
+                                        {{vm.total.notpaid | currency:"":0}}
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

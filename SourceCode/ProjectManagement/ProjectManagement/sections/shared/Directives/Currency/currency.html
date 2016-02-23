@@ -1,0 +1,14 @@
+﻿<div>
+    <div ng-show="showInput">
+        <form name="ccf">
+            <input class="form-control" ng-model="modelMoneyMask"
+                   name="currencyvalue"
+                   placeholder="0" ng-required="isRequired" ng-attr-id="{{idDirective}}" ng-disabled="disableCurrency" ng-change="fn.changeValueUserInput()" maxlength="{{limit}}">
+            <!--<p class="help-block">
+            </p>-->
+        </form>
+    </div>
+    <div ng-show="showLabel">
+        <label class="{{className}}">{{modelMoneyMask}}</label>
+    </div>
+</div>

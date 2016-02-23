@@ -1,0 +1,233 @@
+﻿<style type="text/css">
+    .text-orange {
+        color: #FF6E40;
+    }
+
+    .modal-body {
+        background-color: #F5F5F5;
+    }
+
+    tr td {
+        text-align: right;
+        font-weight: bold;
+    }
+
+    tr.selected {
+        background-color: #b0bed9;
+    }
+</style>
+
+<div class="modal-header">
+    <h3 class="modal-title text-orange text-uppercase">Cập nhật kinh phí</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <section class="box">
+                <header class="panel_header">
+                    <h2 class="title pull-left">Lựa chọn nhiệm vụ</h2>
+                    <div class="actions panel_actions pull-right">
+                        <i class="box_toggle material-icons">expand_more</i>
+                    </div>
+                </header>
+                <div class="content-body padding-top-30 padding-bottom-30">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-md-2 col-sm-4 col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-label" for="field-1">Năm kế hoạch</label>
+                                    <span class="desc"></span>
+                                    <div class="input-group" inputgroup>
+                                        <select class="form-control" name="year" data-ng-model="vmUpdate.searchCondition.year" data-ng-options="unit.value as unit.name for unit in vmUpdate.options.year" ng-change="vmUpdate.FnGetComboboxProject(vmUpdate.searchCondition.year)"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-10 col-sm-8 col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-label" for="field-1">Tên nhiệm vụ</label>
+                                    <span class="desc"></span>
+                                    <div class="controls">
+                                        <select class="form-control" name="type" data-ng-model="vmUpdate.searchCondition.ProjectId" data-ng-options="unit.ProjectId as unit.ProjectName for unit in vmUpdate.options.projects" ng-change="vmUpdate.FnSearchPeriod()"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">
+                                    Kinh phí thực hiện<br />
+                                    {{vmUpdate.total.Amount | currency:"":0}}
+                                </label>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">
+                                    Đã giải ngân<br />
+                                    {{vmUpdate.total.MoneyPaid | currency:"":0}}
+                                </label>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">
+                                    Số dư dự toán<br />
+                                    {{vmUpdate.total.MoneyThink | currency:"":0}}
+                                </label>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">
+                                    Số dư ứng<br />
+                                    {{vmUpdate.total.MoneyAdd | currency:"":0}}
+                                </label>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">
+                                    Kinh phí trả lại<br />
+                                    {{vmUpdate.total.MoneyReturn | currency:"":0}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <section class="box">
+                <header class="panel_header">
+                    <h2 class="title pull-left">Bảng theo dõi phân kỳ cấp kinh phí</h2>
+                    <div class="actions panel_actions pull-right">
+                        <i class="box_toggle material-icons">expand_more</i>
+                    </div>
+                </header>
+                <div class="content-body padding-top-30 padding-bottom-30">
+                    <div class="row">
+                        <div class="col-md-12 text-right">
+                            <button type="button" class="btn btn-primary margin-bottom-15" ng-click="vmUpdate.FnShowUpdate(0,0)">Thêm mới</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Năm phân kỳ</th>
+                                        <th>Kinh phí chuyển tiếp</th>
+                                        <th>Dư ứng chuyển tiếp</th>
+                                        <th>KP phê duyệt</th>
+                                        <th>KP đã cấp</th>
+                                        <th>KP đã thanh toán</th>
+                                        <th>KP còn chưa cấp</th>
+                                        <th>Dư ứng</th>
+                                        <th>KP trả lại</th>
+                                        <th>Số dư chuyển năm sau</th>
+                                        <th width="111px">Xử lý</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="row in vmUpdate.periods" ng-click="vmUpdate.FnSearchPeriodDetail(row.ProjectId, row.Year, $index)" ng-class="{'selected':$index == vmUpdate.SelectedRow}" ng-show="vmUpdate.periods.length != 0">
+                                        <td>{{row.Year}}</td>
+                                        <td>
+                                            {{row.AmountForward | currency:"":0}}
+                                        </td>
+                                        <td>
+                                            {{row.BalanceForward | currency:"":0}}
+                                        </td>
+                                        <td>
+                                            {{row.Amount | currency:"":0}}
+                                        </td>
+                                        <td class="text-blue">
+                                            {{row.MoneyGet | currency:"":0}}
+                                        </td>
+                                        <td class="text-blue">
+                                            {{row.MoneyPaid | currency:"":0}}
+                                        </td>
+                                        <td class="text-red">
+                                            {{row.Amount - row.MoneyGet + row.AmountForward | currency:"":0}}
+                                        </td>
+                                        <td class="text-red">
+                                            {{row.MoneyAdd | currency:"":0}}
+                                        </td>
+                                        <td>
+                                            {{row.AmountReutrn | currency:"":0}}
+                                        </td>
+                                        <td class="text-red">
+                                            {{row.Amount - row.MoneyGet + row.MoneyAdd | currency:"":0}}
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-info" ng-click="vmUpdate.FnUpdateTransfer(row.Amount - row.MoneyGet + row.AmountForward, row.MoneyAdd, row.Year, row.ProjectId)"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+                                            <button type="button" class="btn btn-warning" ng-click="vmUpdate.FnShowUpdate(1, row.PeriodId)"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                                            <button type="button" class="btn btn-danger" ng-click="vmUpdate.FnShowConfirm(0, row.PeriodId)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr ng-show="vmUpdate.periods.length == 0">
+                                        <td colspan="11" class="text-center text-info">Không có dữ liệu!!!</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <section class="box">
+                <header class="panel_header">
+                    <h2 class="title pull-left">Chi tiết các kỳ cấp kinh phí</h2>
+                    <div class="actions panel_actions pull-right">
+                        <i class="box_toggle material-icons">expand_more</i>
+                    </div>
+                </header>
+                <div class="content-body padding-top-30 padding-bottom-30">
+                    <div class="row">
+                        <div class="col-md-12 text-right">
+                            <button type="button" class="btn btn-primary margin-bottom-15" ng-click="vmUpdate.FnShowUpdateDetail(0,0)">Thêm mới</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Số tiền thanh toán trực tiếp</th>
+                                        <th>Ngày thanh toán trực tiếp</th>
+                                        <th>Số tiền tạm ứng</th>
+                                        <th>Ngày tạm ứng</th>
+                                        <th>Số tiền thanh toán tạm ứng</th>
+                                        <th>Ngày thanh toán tạm ứng</th>
+                                        <th>Số dư tạm ứng</th>
+                                        <th>Ghi chú</th>
+                                        <th width="83px">Xử lý</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="row in vmUpdate.periodDetails" ng-show="vmUpdate.periodDetails.length != 0">
+                                        <td>{{$index + 1}}</td>
+                                        <td>
+                                            <a href="javascript:;" ng-click="vmUpdate.FnShowUpdateDetail(1, row.PeriodDetailId)">{{row.Amount | currency:"":0}}</a>
+                                        </td>
+                                        <td>{{row.AmountDate | date:'dd/MM/yyyy'}}</td>
+                                        <td>
+                                            <a href="javascript:;" ng-click="vmUpdate.FnShowUpdateDetail(1, row.PeriodDetailId)">{{row.AdvanceAmount | currency:"":0}}</a>
+                                        </td>
+                                        <td>{{row.AdvanceDate | date:'dd/MM/yyyy'}}</td>
+                                        <td>{{row.Payment | currency:"":0}}</td>
+                                        <td>{{row.PaymentDate | date:'dd/MM/yyyy'}}</td>
+                                        <td class="text-red">{{row.AdvanceAmount-row.Payment | currency:"":0}}</td>
+                                        <td>{{row.Note}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-warning" ng-click="vmUpdate.FnShowUpdateDetail(1, row.PeriodDetailId)"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                                            <button type="button" class="btn btn-danger" ng-click="vmUpdate.FnShowConfirm(1, row.PeriodDetailId)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr ng-show="vmUpdate.periodDetails.length == 0">
+                                        <td colspan="10" class="text-center text-info">Không có dữ liệu!!!</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="vmUpdate.cancel()">Thoát</button>
+</div>

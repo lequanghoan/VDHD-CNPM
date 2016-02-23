@@ -1,0 +1,115 @@
+<style type="text/css">
+    .text-orange {
+        color: #FF6E40;
+    }
+</style>
+<style>
+    .app-modal-window-select-create .modal-dialog {
+        width: 70%;
+    }
+</style>
+<div class="modal-header">
+    <h3 class="modal-title text-orange text-uppercase">Thêm mới Cán bộ</h3>
+</div>
+<div class="modal-body">
+    <form name="addForm">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Tên Cán bộ:<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <input type="text" class="form-control" maxlength="256" ng-model="vmCreate.CreateEntity.FullName" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Email:</label>
+                        <div class="controls">
+                            <input type="text" class="form-control" maxlength="256" ng-model="vmCreate.CreateEntity.Email">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Tên đăng nhập:<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <input type="text" class="form-control" maxlength="256" ng-model="vmCreate.CreateEntity.UserName" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Số điện thoại:</label>
+                        <div class="controls">
+                            <input type="text" class="form-control" ng-model="vmCreate.CreateEntity.PhoneNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Ngày sinh:</label>
+                        <div class="controls">
+                            <input type="text" class="form-control" ng-model="vmCreate.CreateEntity.Birthday">
+                            <!--<datepicker-full model-date="vmCreate.CreateEntity.Birthday"></datepicker-full>-->
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Phòng ban:<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <select class="form-control" data-ng-model="vmCreate.CreateEntity.DepartmentId"
+                                    data-ng-options="unit.DepartmentId as unit.DepartmentName for unit in vmCreate.ListDepartment" required>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Địa chỉ:</label>
+                        <div class="controls">
+                            <textarea class="form-control" cols="6" maxlength="500" ng-model="vmCreate.CreateEntity.Address"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Quyền:<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <div class="col-md-4">
+                                <div class="radio-inline">
+                                    <label class="icheck" style="float:left">
+                                        <input type="radio" name="role" style="position: absolute" ng-model="vmCreate.CreateEntity.RoleAdmin"
+                                               ng-checked="vmCreate.CreateEntity.RoleAdmin==true" value="true">
+                                        <i></i>
+                                    </label>
+                                    <p style="float:left">Admin</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="radio-inline">
+                                    <label class="icheck" style="float:left">
+                                        <input type="radio" name="role" style="position: absolute" ng-model="vmCreate.CreateEntity.RoleAdmin"
+                                               ng-checked="!vmCreate.CreateEntity.RoleAdmin" value="false">
+                                        <i></i>
+                                    </label>
+                                    <p style="float:left">Cán bộ thường</p>
+                                </div>
+                            </div>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Vị trí:<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <select class="form-control" data-ng-model="vmCreate.CreateEntity.Position"
+                                    data-ng-options="unit.id as unit.name for unit in vmCreate.ListPosition" required>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-disabled="addForm.$invalid" ng-click="vmCreate.FnSave()">Thêm</button>
+    <button class="btn btn-default" ng-click="vmCreate.FnCancel()">Thoát</button>
+</div>

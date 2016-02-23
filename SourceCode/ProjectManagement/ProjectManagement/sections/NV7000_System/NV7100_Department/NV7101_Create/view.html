@@ -1,0 +1,49 @@
+<style type="text/css">
+    .text-orange {
+        color: #FF6E40;
+    }
+</style>
+<style>
+    .app-modal-window-select-create .modal-dialog {
+        width: 70%;
+    }
+</style>
+<div class="modal-header">
+    <h3 class="modal-title text-orange text-uppercase">Thêm mới Phòng/Ban</h3>
+</div>
+<div class="modal-body">
+    <form name="addForm">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="form-label">Tên Phòng/Ban<span class="text-danger text-strong">&nbsp;*</span></label>
+                        <div class="controls">
+                            <input type="text" placeholder="Tên Phòng/Ban" class="form-control" maxlength="300" required ng-model="vmCreate.CreateEntity.DepartmentName">
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="row margin-top-10">
+                    <div class="col-md-12">
+                        <label class="form-label">Chức trách/Nhiệm vụ</label>
+                        <div class="controls">
+                            <textarea class="form-control" cols="5" id="field-6" ng-model="vmCreate.CreateEntity.Mission"></textarea>
+                        </div>
+                    </div>
+                </div>-->
+                <div class="row margin-top-10">
+                    <div class="col-md-12">
+                        <label class="form-label">Ghi chú</label>
+                        <div class="controls">
+                            <textarea class="form-control" placeholder="Ghi chú" cols="5" id="field-6" ng-model="vmCreate.CreateEntity.Note"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-disabled="addForm.$invalid" ng-click="vmCreate.FnSave()">Thêm</button>
+    <button class="btn btn-default" ng-click="vmCreate.FnCancel()">Thoát</button>
+</div>
