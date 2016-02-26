@@ -9,10 +9,30 @@
             GetAllDepartment: getAllDepartment,
             ApproveProject: approveProject,
             ChangeDept: changeDept,
-            DeleteProject: deleteProject
+            DeleteProject: deleteProject,
+            CheckConstrain: checkConstrain
         };
 
         return ExpectedProjectServiceFactory;
+
+        function checkConstrain(projectId) {
+            var deferred = $q.defer();
+            var obj = {
+                ProjectId: projectId
+            }
+            var url = serviceBase + 'api/prepareProject/CheckConstrain';
+            $http.post(url, JSON.stringify(obj), { headers: { 'Content-Type': 'application/json' } })
+               .success(function (response) {
+                   deferred.resolve(response);
+                   return response;
+               })
+               .error(function (errMessage, statusCode) {
+                   var result = { isSuccess: false, status: statusCode, message: errMessage };
+                   deferred.reject(result);
+                   return result;
+               });
+            return deferred.promise;
+        }
 
         function searchProject(obj) {
             var deferred = $q.defer();

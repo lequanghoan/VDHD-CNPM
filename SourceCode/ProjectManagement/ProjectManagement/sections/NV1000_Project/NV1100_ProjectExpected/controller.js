@@ -8,7 +8,6 @@
           TotalMoney: 0
       }
       fnGetDataCombobox();
-
       vm.ListDepartment = [];
       vm.SearchEntity = {
           ProjectName: "",
@@ -36,19 +35,20 @@
               ProjectType: "0",
               Status: "0",
               DepartmentId: "",
-              PlanYear: "0"
+              PlanYear: new Date().getFullYear()
           }
+          fnSearch();
       }
 
       function fnGetDataCombobox() {
-          $http.get('data/list-year.json').success(function (data) {
-              vm.ListYear = data;
-          });
+          vm.ListYear = [{ id: 0, name: "Tất cả" }];
+          for (var i = 2010; i < 2051; i++)
+              vm.ListYear.push({ id: i, name: i });
           ExpectedProjectService.GetAllDepartment().then(function (data) {
               vm.ListDepartment = data;
+              fnInitSearchValue();
           }, function (error) {
-              vm.ListData = null;
-              fnShowMessage(error.message, 1);
+              notify('Lỗi xảy ra khi lấy danh sách phòng ban!');
           });
       }
 
@@ -61,7 +61,7 @@
               }
           }, function (error) {
               vm.ListData = null;
-              fnShowMessage(error.message, 1);
+              notify('Lỗi xảy ra khi lấy danh sách nhiệm vụ!');
           });
 
       }
@@ -75,8 +75,7 @@
           ExpectedProjectService.ApproveProject(vm.UpdateEntity).then(function (data) {
               notify('Cập nhật thành công!');
           }, function (error) {
-              vm.ListData = null;
-              fnShowMessage(error.message, 1);
+              notify('Cập nhật không thành công!');
           });
 
       }
@@ -90,8 +89,7 @@
           ExpectedProjectService.ChangeDept(vm.UpdateEntity).then(function (data) {
               notify('Cập nhật thành công!');
           }, function (error) {
-              vm.ListData = null;
-              fnShowMessage(error.message, 1);
+              notify('Cập nhật không thành công!');
           });
 
       }
@@ -110,17 +108,49 @@
               }
           });
           modalInstance.result.then(function (rs) {
+              if (rs) {
+                  ExpectedProjectService.CheckConstrain(projectId).then(function (data) {
+                      if (data)
+                          fnShowConfirm2(projectId);
+                      else {
+                          fnDelete(projectId);
+                      }
+                  }, function (error) {
+                      notify('Lỗi xảy ra khi kết nối server');
+                  });
+              }
+          }, function () {
+          });
+      };
+
+
+      function fnShowConfirm2(projectId) {
+          var modalConfirm = $uibModal.open({
+              templateUrl: 'sections/shared/modalConfirmWithTitle/view.html',
+              controller: 'ConfirmOverwriteCtrl',
+              controllerAs: 'vmPopup',
+              resolve: {
+                  deps: ['uiLoad',
+                                  function (uiLoad) {
+                                      return uiLoad.load('sections/shared/modalConfirmWithTitle/controller.js');
+                                  }
+                  ], items: function () {
+                      return { Title: "Nhiệm vụ đang được thực hiện bạn có muốn xóa không?" };
+                  }
+              }
+          });
+          modalConfirm.result.then(function (rs) {
               if (rs)
                   fnDelete(projectId);
           }, function () {
-              $log.info('Modal dismissed at: ' + new Date());
           });
-      };
-      function fnDelete(deptId) {
-          ExpectedProjectService.DeleteProject(deptId).then(function (data) {
+      }
+
+      function fnDelete(projectId) {
+          ExpectedProjectService.DeleteProject(projectId).then(function (data) {
               fnSearch();
           }, function (error) {
-              fnShowMessage(error.message, 1);
+              notify('Lỗi khi xóa nhiệm vụ!');
           });
       }
 
@@ -148,10 +178,7 @@
           modalInstance.result.then(function (rs) {
               if (rs)
                   fnSearch();
-              else
-                  fnShowMessage("Thêm mới không thành công!", 1);
           }, function () {
-              $log.info('Modal dismissed at: ' + new Date());
           });
       }
 
@@ -181,10 +208,7 @@
           modalInstance.result.then(function (rs) {
               if (rs)
                   fnSearch();
-              else
-                  fnShowMessage("Cập nhật không thành công!", 1);
-          }, function () {
-              $log.info('Modal dismissed at: ' + new Date());
+          }, function () {             
           });
       }
   }

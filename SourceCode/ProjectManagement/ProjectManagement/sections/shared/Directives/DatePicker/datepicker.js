@@ -2,7 +2,6 @@
     return {
         restrict: 'E',
         scope: {
-            'searchMode': '@',
             'isValidate': '@',
             'textValidate': '@',
             'modelDate': '=',
@@ -22,27 +21,32 @@
                 open: function ($event) {
                     if (!$scope.disableDatepicker == 1)
                         vm.DatePicker.status.opened = true;
-                }
+                },
+                open2: false,
             };
+            vm.dateOptions = {
+                formatYear: 'yy',
+                startingDay: 1
+            };
+            vm.DatePicker.open = function ($event, type) {
+                $event.preventDefault();
+                $event.stopPropagation();
+                vm.DatePicker[type] = true;
 
+            };
             initData();
 
             function initData() {
 
-                if ($scope.searchMode == 1) {
-                    $scope.modelDate = addDays(new Date(), -7);
+                if ($scope.modelDate != null) {
                     $scope.$watch('modelDate', function () {
-                        if ($scope.modelDate == null) {
-                            $scope.modelDate = addDays(new Date(), -7);
-                        }
+                        // Chuyển dạng string về object
+                        //if (typeof $scope.modelDate != 'object') {
+                        //    $scope.modelDate = new Date($scope.modelDate);
+                        //}
+                        if (typeof $scope.modelDate != 'string')
+                            $scope.modelDate = addDays($scope.modelDate, 0);
                     });
-                } else {
-                    if ($scope.modelDate != null) {
-                        $scope.$watch('modelDate', function () {
-                            if (typeof $scope.modelDate != 'string')
-                                $scope.modelDate = addDays($scope.modelDate, 0);
-                        });
-                    }
                 }
                 if ($scope.isValidate == 1) {
                     vm.showValidate = true;

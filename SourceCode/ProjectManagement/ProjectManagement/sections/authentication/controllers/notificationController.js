@@ -31,9 +31,10 @@ app.controller('notificationController', ['$scope', 'localStorageService', 'auth
             if (rs)               
             {
                 notify('Thay đổi mật khẩu thành công');
+                $scope.fnLogOut();
             }
         }, function () {
-            $log.info('Modal dismissed at: ' + new Date());
+            //$log.info('Modal dismissed at: ' + new Date());
         });
     }
     

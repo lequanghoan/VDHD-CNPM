@@ -5,21 +5,21 @@
 
     vm.obj = obj;
 
-    vm.DatePicker = {
-        open2: false,
-    };
+    //vm.DatePicker = {
+    //    open2: false,
+    //};
     
-    vm.DatePicker.open = function($event,type) {
-        $event.preventDefault();
-        $event.stopPropagation();
-        vm.DatePicker[type] = true;
+    //vm.DatePicker.open = function($event,type) {
+    //    $event.preventDefault();
+    //    $event.stopPropagation();
+    //    vm.DatePicker[type] = true;
 
-    };
+    //};
 
-    vm.dateOptions = {
-        formatYear: 'yy',
-        startingDay: 1
-    };
+    //vm.dateOptions = {
+    //    formatYear: 'yy',
+    //    startingDay: 1
+    //};
 
     vm.UpdateEntity = {
         Type: 1,

@@ -1,15 +1,9 @@
 ﻿<div>
     <form name="dpk">
-        <input class="form-control" ng-model="modelDate"
-               is-open="DatePicker.status.opened" readonly="readonly" uib-datepicker-popup
-               current-text="Hôm nay" clear-text="Xóa" close-text="OK"
-               name="datevalue"
-               ng-click="DatePicker.open($event)" placeholder="dd/MM/yyyy" ng-required="isRequired" datepicker-local-date>
-
-        <p class="help-block" ng-show="showValidate">
-            <span style="color:red" ng-show="dpk.datevalue.$error.required">
-                {{textValidate}}
-            </span>
-        </p>
+        <div class="input-group" inputgroup>
+            <input type="date" class="form-control datepicker" datepicker-local-date uib-datepicker-popup ng-model="modelDate"
+                   is-open="DatePicker.open2" datepicker-options="dateOptions" close-text="Đóng" format-date />
+            <span class="input-group-addon" ng-click="DatePicker.open($event,'open2')"><i class="fa fa-calendar" style="color: #999;"></i></span>
+        </div>
     </form>
 </div>

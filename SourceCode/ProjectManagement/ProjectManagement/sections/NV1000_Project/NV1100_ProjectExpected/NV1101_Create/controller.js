@@ -1,5 +1,5 @@
-﻿app.controller('ProjectExpectedCreateCtrl', ['$rootScope', '$scope', '$http', '$uibModal', '$uibModalInstance', 'ExpectedProjectCreateService',
-  function ($rootScope, $scope, $http, $uibModal, $uibModalInstance, ExpectedProjectCreateService) {
+﻿app.controller('ProjectExpectedCreateCtrl', ['$rootScope', '$scope', '$http', '$uibModal', '$uibModalInstance', 'ExpectedProjectCreateService','notify',
+  function ($rootScope, $scope, $http, $uibModal, $uibModalInstance, ExpectedProjectCreateService,notify) {
       var vm = this;
       vm.CreateEntity = {
           ProjectNameExpected: "",
@@ -30,7 +30,7 @@
           ExpectedProjectCreateService.CreateProject(vm.CreateEntity).then(function (data) {
               $uibModalInstance.close(true);
           }, function (error) {
-              $uibModalInstance.close(false);
+              notify('Thêm mới không thành công!');
           });
 
       };

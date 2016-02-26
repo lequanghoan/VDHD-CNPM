@@ -5,6 +5,7 @@
       vm.SearchEntity = {
           DepartmentName: ""
       }
+      fnInitSearchValue();
       vm.FnClear = fnInitSearchValue;
       vm.FnSearch = fnSearch;
       vm.FnCreate = fnShowModalCreate;
@@ -14,6 +15,7 @@
           vm.SearchEntity = {
               DepartmentName: ""
           }
+          fnSearch();
       }
 
       function fnSearch() {

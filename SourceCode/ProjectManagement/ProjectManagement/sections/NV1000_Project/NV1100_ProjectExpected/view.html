@@ -69,7 +69,6 @@
                                 <div class="input-group" inputgroup>
                                     <select class="form-control" name="year" data-ng-model="vm.SearchEntity.PlanYear"
                                             data-ng-options="unit.id as unit.name for unit in vm.ListYear">
-                                        <!--<option value="" selected="selected">&lt;Tất cả&gt;</option>-->
                                     </select>
                                 </div>
                             </div>
@@ -103,20 +102,20 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>STT</th>
-                                    <th>Loại</th>
-                                    <th>Năm</th>
+                                    <th width="30">STT</th>
+                                    <th width="50">Loại</th>
+                                    <th width="50">Năm</th>
                                     <th>Tên nhiệm vụ</th>
                                     <th>Đơn vị thực hiện</th>
                                     <th>Phòng Quản lý</th>
-                                    <th>Kinh phí</th>
-                                    <th>Duyệt</th>
-                                    <th>Xử lý</th>
+                                    <th width="70">Kinh phí</th>
+                                    <th width="50">Duyệt</th>
+                                    <th width="30">Xử lý</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="row in vm.ListData">
-                                    <td>{{$index+1}}</td>
+                                    <td style="text-align:right">{{$index+1}}</td>
                                     <td>{{row.ProjectTypeName}}</td>
                                     <td>{{row.PlanYear}}</td>
                                     <td><a href="javascript:;" ng-click="vm.FnShowEdit(row.ProjectId)">{{row.ProjectName}}</a></td>
@@ -128,7 +127,9 @@
                                             <option value="" selected="selected"></option>
                                         </select>
                                     </td>
-                                    <td style="text-align:right">{{row.FundsFor}}</td>
+                                    <td style="text-align:right">
+                                        <currency-full view-type="label" model-money="row.FundsFor"></currency-full>
+                                    </td>
                                     <td class="text-center">
                                         <div class="checkbox">
                                             <label class="icheck">
@@ -144,7 +145,9 @@
                                 </tr>
                                 <tr ng-if="vm.ListData.length>0">
                                     <td colspan="6" style="text-align:right">Tổng kinh phí:</td>
-                                    <td colspan="1" style="text-align:right">{{vm.GridVM.TotalMoney}}</td>
+                                    <td colspan="1" style="text-align:right">
+                                        <currency-full view-type="label" model-money="vm.GridVM.TotalMoney"></currency-full>
+                                    </td>
                                     <td></td>
                                     <td></td>
                                 </tr>

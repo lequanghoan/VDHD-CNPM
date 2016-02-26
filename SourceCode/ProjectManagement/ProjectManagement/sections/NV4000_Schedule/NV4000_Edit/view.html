@@ -18,13 +18,15 @@
                     <div class="col-md-6">
                         <label class="form-label">Tên Sản phẩm:<span class="text-danger text-strong">&nbsp;*</span></label>
                         <div class="controls">
-                            <input type="text" class="form-control" ng-model="vmUpdate.UpdateEntity.ScheduleName" required>
+                            <textarea class="form-control" cols="5" ng-model="vmUpdate.UpdateEntity.ScheduleName" required></textarea>
+                            <!--<input type="text" class="form-control" ng-model="vmUpdate.UpdateEntity.ScheduleName" required>-->
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Nội dung thực hiện:<span class="text-danger text-strong">&nbsp;*</span></label>
                         <div class="controls">
-                            <input type="text" class="form-control" required ng-model="vmUpdate.UpdateEntity.Content">
+                            <textarea class="form-control" cols="5" ng-model="vmUpdate.UpdateEntity.Content" required></textarea>
+                            <!--<input type="text" class="form-control" required ng-model="vmUpdate.UpdateEntity.Content">-->
                         </div>
                     </div>
                 </div>
@@ -33,7 +35,7 @@
                     <div class="col-md-4">
                         <label class="form-label col-md-6 margin-top-5" for="field-6">Từ tháng/năm</label>
                         <div class="col-md-3">
-                            <select class="form-control" data-ng-model="vmUpdate.UpdateEntity.MonthFrom" required style="float:left"
+                            <select class="form-control" data-ng-model="vmUpdate.UpdateEntity.MonthFrom" required style="float:left" ng-change="vmUpdate.ChangeTime"
                                     data-ng-options="unit.id as unit.name for unit in vmUpdate.ListMonth"></select>
                         </div>
                         <div class="col-md-3">
@@ -69,6 +71,7 @@
                     <div class="col-md-6">
                         <label class="form-label">Ghi chú:</label>
                         <div class="controls">
+                            <textarea class="form-control" cols="5" ng-model="vmUpdate.UpdateEntity.Note"></textarea>
                             <input type="text" class="form-control" ng-model="vmUpdate.UpdateEntity.Note">
                         </div>
                     </div>
@@ -79,6 +82,6 @@
 </div>
 
 <div class="modal-footer">
-    <button class="btn btn-primary" ng-disabled="addForm.$invalid" ng-click="vmUpdate.FnSave()">Lưu</button>
+    <button class="btn btn-primary" ng-disabled="addForm.$invalid || vmUpdate.invalidTime" ng-click="vmUpdate.FnSave()">Lưu</button>
     <button class="btn btn-default" ng-click="vmUpdate.FnCancel()">Thoát</button>
 </div>

@@ -1,5 +1,5 @@
 
-<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Lĩnh vực';">
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Quản lý Lĩnh vực';">
     <div class="col-lg-12">
         <section class="box ">
             <header class="panel_header">
@@ -20,11 +20,19 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-8 col-sm-12 col-xs-12 text-right">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1"></label>
+                                <span class="desc"></span>
+                                <div class="controls">
+                                    <button type="submit" class="btn btn-primary" ng-click="vm.FnSearch()">Tìm kiếm</button>
+                                    <button type="button" class="btn btn-primary" ng-click="vm.FnClear()">Xóa điều kiện</button>
+                                </div>
+                            </div>
+                            
+                        </div>
                     </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
-                        <button type="submit" class="btn btn-primary" ng-click="vm.FnSearch()">Tìm kiếm</button>
-                        <button type="button" class="btn btn-primary" ng-click="vm.FnClear()">Xóa điều kiện</button>
-                    </div>
+                    
                 </div>
             </div>
         </section>
